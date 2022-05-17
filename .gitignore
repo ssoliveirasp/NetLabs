@@ -3,3 +3,24 @@
 ################################################################################
 
 /.vs/NetLabs31
+/HelloWorld/.vs/HelloWorld/DesignTimeBuild
+/HelloWorld/bin/Debug/netcoreapp3.1
+/HelloWorld/obj/Debug/netcoreapp3.1
+/HelloWorld/obj
+/Multithreading/MonitorSyncLabs/bin/Debug/netcoreapp3.1
+/Multithreading/MonitorSyncLabs/obj/Debug/netcoreapp3.1
+/Multithreading/MonitorSyncLabs/obj
+/Multithreading/ThreadPriorityLabs/bin/Debug/netcoreapp3.1
+/Multithreading/ThreadPriorityLabs/obj/Debug/netcoreapp3.1
+/Multithreading/ThreadPriorityLabs/obj/ThreadPriorityLabs.csproj.nuget.g.targets
+/Multithreading/ThreadPriorityLabs/obj/ThreadPriorityLabs.csproj.nuget.g.props
+/Multithreading/ThreadPriorityLabs/obj/ThreadPriorityLabs.csproj.nuget.dgspec.json
+/Multithreading/ThreadPriorityLabs/obj/project.nuget.cache
+/Multithreading/ThreadPriorityLabs/obj/project.assets.json
+/Multithreading/ThreadsWaitingLabs/bin/Debug/netcoreapp3.1
+/Multithreading/ThreadsWaitingLabs/obj/Debug/netcoreapp3.1
+/Multithreading/ThreadsWaitingLabs/obj
+/Performance/BenchmarkDotNetStarted/bin
+/Performance/BenchmarkDotNetStarted/obj
+/Security/NetSecrets/bin/Debug/netcoreapp3.1
+/Security/NetSecrets/obj
