@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31529.145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{1D5E9E87-9CC2-42B5-83CE-B62E2307067B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multithreading", "Multithreading", "{0B48D909-B37D-456C-A6CD-9FE0C8E0750C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance", "Performance", "{04CF455C-3D0A-4E6A-81B6-1588C902C745}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{6C77CB40-8E21-42F6-8523-B6C09C37F4E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Start", "Start", "{3AF91E4D-50C9-43A8-BA5D-9D324925650C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkDotNetStarted", "Performance\BenchmarkDotNetStarted\BenchmarkDotNetStarted.csproj", "{EB0B8D01-460B-4BE3-BCA5-3331CD195015}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSecrets", "Security\NetSecrets\NetSecrets.csproj", "{55390E41-C0BB-4EC3-ABEA-948B8D8679C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Syncronization", "Syncronization", "{E265713E-5099-4CE4-BB1F-DB6468519011}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Priority", "Priority", "{25913350-0581-4257-A061-916C210FE7DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Waiting", "Waiting", "{E527CE5E-24C0-41DC-92ED-D94131C86C0B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPriorityLabs", "Multithreading\ThreadPriorityLabs\ThreadPriorityLabs.csproj", "{0A263DE7-2CC7-4431-BE92-A8240F87A6D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorSyncLabs", "Multithreading\MonitorSyncLabs\MonitorSyncLabs.csproj", "{32B12EEE-8B63-4E0C-964E-AF7C257EF1F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadsWaitingLabs", "Multithreading\ThreadsWaitingLabs\ThreadsWaitingLabs.csproj", "{3ED1C66D-724E-436D-AA8D-918CCEDBCFBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D5E9E87-9CC2-42B5-83CE-B62E2307067B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D5E9E87-9CC2-42B5-83CE-B62E2307067B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D5E9E87-9CC2-42B5-83CE-B62E2307067B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5E9E87-9CC2-42B5-83CE-B62E2307067B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0B8D01-460B-4BE3-BCA5-3331CD195015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0B8D01-460B-4BE3-BCA5-3331CD195015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0B8D01-460B-4BE3-BCA5-3331CD195015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0B8D01-460B-4BE3-BCA5-3331CD195015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55390E41-C0BB-4EC3-ABEA-948B8D8679C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55390E41-C0BB-4EC3-ABEA-948B8D8679C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55390E41-C0BB-4EC3-ABEA-948B8D8679C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55390E41-C0BB-4EC3-ABEA-948B8D8679C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A263DE7-2CC7-4431-BE92-A8240F87A6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A263DE7-2CC7-4431-BE92-A8240F87A6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A263DE7-2CC7-4431-BE92-A8240F87A6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A263DE7-2CC7-4431-BE92-A8240F87A6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B12EEE-8B63-4E0C-964E-AF7C257EF1F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B12EEE-8B63-4E0C-964E-AF7C257EF1F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B12EEE-8B63-4E0C-964E-AF7C257EF1F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B12EEE-8B63-4E0C-964E-AF7C257EF1F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED1C66D-724E-436D-AA8D-918CCEDBCFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED1C66D-724E-436D-AA8D-918CCEDBCFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED1C66D-724E-436D-AA8D-918CCEDBCFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED1C66D-724E-436D-AA8D-918CCEDBCFBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D5E9E87-9CC2-42B5-83CE-B62E2307067B} = {3AF91E4D-50C9-43A8-BA5D-9D324925650C}
+		{EB0B8D01-460B-4BE3-BCA5-3331CD195015} = {04CF455C-3D0A-4E6A-81B6-1588C902C745}
+		{55390E41-C0BB-4EC3-ABEA-948B8D8679C4} = {6C77CB40-8E21-42F6-8523-B6C09C37F4E5}
+		{E265713E-5099-4CE4-BB1F-DB6468519011} = {0B48D909-B37D-456C-A6CD-9FE0C8E0750C}
+		{25913350-0581-4257-A061-916C210FE7DC} = {0B48D909-B37D-456C-A6CD-9FE0C8E0750C}
+		{E527CE5E-24C0-41DC-92ED-D94131C86C0B} = {0B48D909-B37D-456C-A6CD-9FE0C8E0750C}
+		{0A263DE7-2CC7-4431-BE92-A8240F87A6D7} = {25913350-0581-4257-A061-916C210FE7DC}
+		{32B12EEE-8B63-4E0C-964E-AF7C257EF1F1} = {E265713E-5099-4CE4-BB1F-DB6468519011}
+		{3ED1C66D-724E-436D-AA8D-918CCEDBCFBA} = {E527CE5E-24C0-41DC-92ED-D94131C86C0B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EE27D0F-74C8-4DC9-B708-E3F9D13DEA09}
+	EndGlobalSection
+EndGlobal
