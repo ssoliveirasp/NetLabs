@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Syncronization", "Syncroniz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorSyncLabs", "Multithreading\Sync\MonitorSyncLabs\MonitorSyncLabs.csproj", "{AEA3F719-264D-4D3D-8883-AE9EB5E220DE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Priority", "Priority", "{BCB73161-1C0F-463F-BB09-CCFAD91EE043}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPriority", "Multithreading\Priority\ThreadPriority\ThreadPriority.csproj", "{83A4C3D4-E0E9-4932-AEEC-28AEF5A960E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{AEA3F719-264D-4D3D-8883-AE9EB5E220DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEA3F719-264D-4D3D-8883-AE9EB5E220DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEA3F719-264D-4D3D-8883-AE9EB5E220DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A4C3D4-E0E9-4932-AEEC-28AEF5A960E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A4C3D4-E0E9-4932-AEEC-28AEF5A960E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A4C3D4-E0E9-4932-AEEC-28AEF5A960E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A4C3D4-E0E9-4932-AEEC-28AEF5A960E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,8 @@ Global
 		{DC8B27B1-FCA3-4884-AB20-14D9BCF81E35} = {DD9462F4-9B51-4AB4-9767-9EED146034BA}
 		{ED789995-5890-435E-82AC-E3697345DAF8} = {D2C2E247-7A5D-4524-82EE-5C4258210E93}
 		{AEA3F719-264D-4D3D-8883-AE9EB5E220DE} = {ED789995-5890-435E-82AC-E3697345DAF8}
+		{BCB73161-1C0F-463F-BB09-CCFAD91EE043} = {D2C2E247-7A5D-4524-82EE-5C4258210E93}
+		{83A4C3D4-E0E9-4932-AEEC-28AEF5A960E1} = {BCB73161-1C0F-463F-BB09-CCFAD91EE043}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE1C778A-6E00-423E-904A-5B30B82259BC}
