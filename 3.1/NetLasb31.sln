@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSecrets", "Security\Secr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TplPipelineLabs", "Multithreading\DesignPatterns\Pipeline\TapPipelineLabs\TplPipelineLabs.csproj", "{C7D9668C-6EB5-4FAB-B68E-EF7D70290676}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dataflow", "Dataflow", "{6BB78D39-ACF0-497C-A908-A41DC59D9BF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TplDataFlowLabs", "Multithreading\DesignPatterns\Dataflow\TplDataFlowLabs\TplDataFlowLabs\TplDataFlowLabs.csproj", "{281D5001-816F-47A5-912D-3F2F9F50BD55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,10 @@ Global
 		{C7D9668C-6EB5-4FAB-B68E-EF7D70290676}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7D9668C-6EB5-4FAB-B68E-EF7D70290676}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7D9668C-6EB5-4FAB-B68E-EF7D70290676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281D5001-816F-47A5-912D-3F2F9F50BD55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281D5001-816F-47A5-912D-3F2F9F50BD55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281D5001-816F-47A5-912D-3F2F9F50BD55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281D5001-816F-47A5-912D-3F2F9F50BD55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +79,8 @@ Global
 		{6D98F656-F384-435C-A34E-3551AAE5F613} = {C5A6E589-361A-442C-9FB5-5840FCCEED05}
 		{D48CDC95-F6F4-4113-8505-A34BC5E60665} = {6D98F656-F384-435C-A34E-3551AAE5F613}
 		{C7D9668C-6EB5-4FAB-B68E-EF7D70290676} = {DC8B27B1-FCA3-4884-AB20-14D9BCF81E35}
+		{6BB78D39-ACF0-497C-A908-A41DC59D9BF2} = {DD9462F4-9B51-4AB4-9767-9EED146034BA}
+		{281D5001-816F-47A5-912D-3F2F9F50BD55} = {6BB78D39-ACF0-497C-A908-A41DC59D9BF2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE1C778A-6E00-423E-904A-5B30B82259BC}
