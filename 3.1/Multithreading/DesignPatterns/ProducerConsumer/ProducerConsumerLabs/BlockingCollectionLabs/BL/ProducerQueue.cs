@@ -6,7 +6,7 @@ using TplProducerConsumerLabs.BlockingCollectionLabs.Model;
 
 namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
 {
-    public class QueueManager
+    public class ProducerQueue
     {
         private const int maxProducers = 2;
         private const int maxMessages = 10;
@@ -17,7 +17,7 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
         public BlockingCollection<Task> Producers { get => blockingProducers; }
         public BlockingCollection<double> Messages { get => blockingMessage; }
 
-        public QueueManager()
+        public ProducerQueue()
         {
             blockingProducers = new BlockingCollection<Task>(maxProducers);
             blockingMessage = new BlockingCollection<double>();
@@ -30,20 +30,8 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
             {
                 Task producer = taskFactory.StartNew(() =>
                 {
-                    double items = 0;
-                    while (items < maxMessages)
-                    {
-                        double message = SendMessageQueue(this);
-                        blockingMessage.Add(message);
-                        items++;
-                    }
-
-                    Console.WriteLine($"Finalizado TaskId: {Task.CurrentId.ToString()} TotalMessages: {blockingMessage.Count}");
-
-                    if (blockingMessage.Count >= (maxMessages * maxProducers) && blockingMessage.IsAddingCompleted == false)
-                    {
-                        blockingMessage.CompleteAdding();
-                    }
+                    AddMessages();
+                    CheckCompleteMessageAdding();
                 });
 
                 blockingProducers.Add(producer);
@@ -54,7 +42,28 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
             return blockingProducers;
         }
 
-        public static double SendMessageQueue(QueueManager manager)
+        private void CheckCompleteMessageAdding()
+        {
+            if (blockingMessage.Count >= (maxMessages * maxProducers) && blockingMessage.IsAddingCompleted == false)
+            {
+                blockingMessage.CompleteAdding();
+            }
+        }
+
+        private void AddMessages()
+        {
+            double items = 0;
+            while (items < maxMessages)
+            {
+                double message = SendMessageQueue(this);
+                blockingMessage.TryAdd(message);
+                items++;
+            }
+
+            Console.WriteLine($"Finalizado TaskId: {Task.CurrentId.ToString()} TotalMessages: {blockingMessage.Count}");
+        }
+
+        public static double SendMessageQueue(ProducerQueue manager)
         {
             var message = new MessageQueue();
             Thread.Sleep(1000);

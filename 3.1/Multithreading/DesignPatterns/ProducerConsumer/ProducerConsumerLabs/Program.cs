@@ -10,7 +10,7 @@ namespace ProducerConsumerLabs
     {
         static void Main(string[] args)
         {
-            var manager = new QueueManager();
+            var manager = new ProducerQueue();
 
             manager.CreateProducers();
 
