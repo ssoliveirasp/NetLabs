@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Threading;
 using System.Threading.Tasks;
+using TplProducerConsumerLabs.BlockingCollectionLabs.BL;
 
 namespace ProducerConsumerLabs
 {
@@ -8,37 +10,45 @@ namespace ProducerConsumerLabs
     {
         static void Main(string[] args)
         {
-            int maxColl = 10;
-            var blockingCollection = new BlockingCollection<int>(maxColl);
-            var taskFactory = new TaskFactory(TaskCreationOptions.LongRunning,
-            TaskContinuationOptions.None);
+            var manager = new QueueManager();
 
-            Task producer = taskFactory.StartNew(() =>
-            {
-                if (blockingCollection.Count <= maxColl)
-                {
-                    int imageID = ReadImageFromDB();
-                    blockingCollection.Add(imageID);
-                    blockingCollection.CompleteAdding();
-                }
-            });
+            manager.CreateProducers();
+
+            //int maxColl = 10;
+            //var blockingCollection = new BlockingCollection<int>(maxColl);
+            //var taskFactory = new TaskFactory(TaskCreationOptions.LongRunning,
+            //TaskContinuationOptions.None);
+
+            //Task producer = taskFactory.StartNew(() =>
+            //{
+            //    if (blockingCollection.Count <= maxColl)
+            //    {
+            //        int imageID = ReadImageFromDB();
+            //        blockingCollection.Add(imageID);
+            //        blockingCollection.CompleteAdding();
+            //    }
+            //});
 
 
-            Task consumer = taskFactory.StartNew(() =>
-            {
-                while (!blockingCollection.IsCompleted)
-                {
-                    try
-                    {
-                        int imageID = blockingCollection.Take();
-                        ProcessImage(imageID);
-                    }
-                    catch (Exception ex)
-                    {
-                        //Log exception 
-                    }
-                }
-            });
+            //Task consumer = taskFactory.StartNew(() =>
+            //{
+            //    while (!blockingCollection.IsCompleted)
+            //    {
+            //        try
+            //        {
+            //            int imageID = blockingCollection.Take();
+            //            ProcessImage(imageID);
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            //Log exception 
+            //        }
+            //    }
+            //});
+
+            Console.WriteLine($"Producers - Count:{manager.Producers.Count}");
+
+            while(manager.Messages.IsAddingCompleted == false) { }
 
             Console.Read();
 
