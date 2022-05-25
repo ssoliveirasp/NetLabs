@@ -8,67 +8,79 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
 {
     public class ProducerQueue
     {
-        private const int maxProducers = 2;
-        private const int maxMessages = 10;
-        BlockingCollection<Task> blockingProducers;
-        BlockingCollection<double> blockingMessage;
-        TaskFactory taskFactory;
+        private int _maxProducers;
+        private int _maxMessagesPerProducer;
+        private long _messagesCount;
+        private MessageBroken _broken;
 
-        public BlockingCollection<Task> Producers { get => blockingProducers; }
-        public BlockingCollection<double> Messages { get => blockingMessage; }
+        public long LimitMessages { get => (_maxMessagesPerProducer * _maxProducers); }
 
-        public ProducerQueue()
+        public bool IsAddingCompleted { get => (_messagesCount >= LimitMessages); }
+        public int MaxProducers { get => _maxProducers; }
+
+        public ProducerQueue(int maxProducers = 2, int maxMessagesPerProducer = 10)
         {
-            blockingProducers = new BlockingCollection<Task>(maxProducers);
-            blockingMessage = new BlockingCollection<double>();
-            taskFactory = new TaskFactory(TaskCreationOptions.LongRunning, TaskContinuationOptions.None);
+            _maxProducers = maxProducers;
+            _maxMessagesPerProducer = maxMessagesPerProducer;
+            _broken = new MessageBroken();
         }
 
-        public BlockingCollection<Task> CreateProducers()
+        public ProducerQueue CreateProducers()
         {
-            while (blockingProducers.Count < maxProducers)
+            var taskFactory = new TaskFactory(TaskCreationOptions.LongRunning, TaskContinuationOptions.None);
+            var blockingProducers = new BlockingCollection<Task>(_maxProducers);
+
+            while (blockingProducers.Count < _maxProducers)
             {
-                Task producer = taskFactory.StartNew(() =>
-                {
-                    AddMessages();
-                    CheckCompleteMessageAdding();
-                });
+                Task producer = taskFactory.StartNew(() => { AddMessagesPerProducer();  });
 
                 blockingProducers.Add(producer);
             }
 
             blockingProducers.CompleteAdding();
 
-            return blockingProducers;
+            return this;
         }
 
-        private void CheckCompleteMessageAdding()
+        public ProducerQueue WaitingProducers()
         {
-            if (blockingMessage.Count >= (maxMessages * maxProducers) && blockingMessage.IsAddingCompleted == false)
+            while (this.IsAddingCompleted == false) { }
+
+            Thread.Sleep(2000);
+
+            return this;
+        }
+
+        public ProducerQueue ShowSummaryProperties()
+        {
+            Console.ResetColor();
+            Console.WriteLine($"Producers              - Count: {_maxProducers.ToString()}");
+            Console.WriteLine($"Max Messages Producers - Count: {_maxMessagesPerProducer.ToString()}");
+            Console.WriteLine($"Limit Messages         - Count: {LimitMessages.ToString()}");
+            Console.WriteLine($"Messages Created       - Count: {_messagesCount.ToString()}");
+
+            return this;
+        }
+
+        private void AddMessagesPerProducer()
+        {
+            long messagesCountProducer = 0;
+
+            while (messagesCountProducer < _maxMessagesPerProducer)
             {
-                blockingMessage.CompleteAdding();
-            }
-        }
+                var message = new MessageQueue();
+               
+                _broken.SendMessageQueue(message);
 
-        private void AddMessages()
-        {
-            double items = 0;
-            while (items < maxMessages)
-            {
-                double message = SendMessageQueue(this);
-                blockingMessage.TryAdd(message);
-                items++;
+                Interlocked.Increment(ref messagesCountProducer);
+                Interlocked.Increment(ref _messagesCount);
             }
 
-            Console.WriteLine($"Finalizado TaskId: {Task.CurrentId.ToString()} TotalMessages: {blockingMessage.Count}");
-        }
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Finalized TaskId: {Task.CurrentId.ToString()} TotalMessages: {messagesCountProducer}");
+            Console.ForegroundColor = ConsoleColor.White;
+        }  
 
-        public static double SendMessageQueue(ProducerQueue manager)
-        {
-            var message = new MessageQueue();
-            Thread.Sleep(1000);
-            Console.WriteLine($"Message sent Code: {message.Code.ToString()} ThreadId: {Task.CurrentId.ToString()} TotalMesages: {manager.blockingMessage.Count}");
-            return message.Code;
-        }
+        
     }
 }

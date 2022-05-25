@@ -6,14 +6,14 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.Model
 {
     public class MessageQueue
     {
-        public double Code { get; set; }
+        public int Code { get; set; }
         public string Name { get; set; }
 
         public MessageQueue()
         {
             var r = new Random();
 
-            Code = r.NextDouble();
+            Code = r.Next(10000, 90000);
             Name = $"Name {Code}";
         }
     }

@@ -10,25 +10,13 @@ namespace ProducerConsumerLabs
     {
         static void Main(string[] args)
         {
-            var manager = new ProducerQueue();
+            var producer = new ProducerQueue(maxProducers: 500, maxMessagesPerProducer: 5);
 
-            manager.CreateProducers();
-
-            //int maxColl = 10;
-            //var blockingCollection = new BlockingCollection<int>(maxColl);
-            //var taskFactory = new TaskFactory(TaskCreationOptions.LongRunning,
-            //TaskContinuationOptions.None);
-
-            //Task producer = taskFactory.StartNew(() =>
-            //{
-            //    if (blockingCollection.Count <= maxColl)
-            //    {
-            //        int imageID = ReadImageFromDB();
-            //        blockingCollection.Add(imageID);
-            //        blockingCollection.CompleteAdding();
-            //    }
-            //});
-
+            producer
+              .ShowSummaryProperties()
+              .CreateProducers()
+              .WaitingProducers()
+              .ShowSummaryProperties();
 
             //Task consumer = taskFactory.StartNew(() =>
             //{
@@ -46,9 +34,7 @@ namespace ProducerConsumerLabs
             //    }
             //});
 
-            Console.WriteLine($"Producers - Count:{manager.Producers.Count}");
 
-            while(manager.Messages.IsAddingCompleted == false) { }
 
             Console.Read();
 
