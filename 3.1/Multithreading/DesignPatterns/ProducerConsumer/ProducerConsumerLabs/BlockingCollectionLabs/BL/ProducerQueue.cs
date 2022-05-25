@@ -42,9 +42,28 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
             return this;
         }
 
+        private void AddMessagesPerProducer()
+        {
+            long messagesCountProducer = 0;
+
+            while (messagesCountProducer < _maxMessagesPerProducer)
+            {
+                var message = new MessageQueue();
+
+                _broken.SendMessageQueue(message);
+
+                Interlocked.Increment(ref messagesCountProducer);
+                Interlocked.Increment(ref _messagesCount);
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Finalized TaskId: {Task.CurrentId.ToString()} TotalMessages: {messagesCountProducer}");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
         public ProducerQueue WaitingProducers()
         {
-            while (this.IsAddingCompleted == false) { }
+            while (this.IsAddingCompleted == false) { Thread.Sleep(1000); }
 
             Thread.Sleep(2000);
 
@@ -60,27 +79,6 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
             Console.WriteLine($"Messages Created       - Count: {_messagesCount.ToString()}");
 
             return this;
-        }
-
-        private void AddMessagesPerProducer()
-        {
-            long messagesCountProducer = 0;
-
-            while (messagesCountProducer < _maxMessagesPerProducer)
-            {
-                var message = new MessageQueue();
-               
-                _broken.SendMessageQueue(message);
-
-                Interlocked.Increment(ref messagesCountProducer);
-                Interlocked.Increment(ref _messagesCount);
-            }
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Finalized TaskId: {Task.CurrentId.ToString()} TotalMessages: {messagesCountProducer}");
-            Console.ForegroundColor = ConsoleColor.White;
-        }  
-
-        
+        }        
     }
 }

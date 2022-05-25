@@ -10,7 +10,7 @@ namespace ProducerConsumerLabs
     {
         static void Main(string[] args)
         {
-            var producer = new ProducerQueue(maxProducers: 500, maxMessagesPerProducer: 5);
+            var producer = new ProducerQueue(maxProducers: 50, maxMessagesPerProducer: 5);
 
             producer
               .ShowSummaryProperties()
