@@ -28,7 +28,8 @@ namespace ProducerConsumerLabs
 
             consumers
               .CreateConsumers()
-              .StartConsumer();
+              .StartConsumer()
+              .ShowSummaryInfo();
 
             Console.Read();
         }

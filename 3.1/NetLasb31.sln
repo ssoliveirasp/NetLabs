@@ -25,17 +25,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{C5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetSecrets", "NetSecrets", "{6D98F656-F384-435C-A34E-3551AAE5F613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSecrets", "Security\Secrets\NetSecrets\NetSecrets.csproj", "{D48CDC95-F6F4-4113-8505-A34BC5E60665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSecrets", "Security\Secrets\NetSecrets\NetSecrets.csproj", "{D48CDC95-F6F4-4113-8505-A34BC5E60665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TplPipelineLabs", "Multithreading\DesignPatterns\Pipeline\TapPipelineLabs\TplPipelineLabs.csproj", "{C7D9668C-6EB5-4FAB-B68E-EF7D70290676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TplPipelineLabs", "Multithreading\DesignPatterns\Pipeline\TapPipelineLabs\TplPipelineLabs.csproj", "{C7D9668C-6EB5-4FAB-B68E-EF7D70290676}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dataflow", "Dataflow", "{6BB78D39-ACF0-497C-A908-A41DC59D9BF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TplDataFlowLabs", "Multithreading\DesignPatterns\Dataflow\TplDataFlowLabs\TplDataFlowLabs\TplDataFlowLabs.csproj", "{281D5001-816F-47A5-912D-3F2F9F50BD55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TplDataFlowLabs", "Multithreading\DesignPatterns\Dataflow\TplDataFlowLabs\TplDataFlowLabs\TplDataFlowLabs.csproj", "{281D5001-816F-47A5-912D-3F2F9F50BD55}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProducerConsumer", "ProducerConsumer", "{76180AD0-8E32-4B08-BAD9-90CDA6BC86BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TplProducerConsumerLabs", "Multithreading\DesignPatterns\ProducerConsumer\ProducerConsumerLabs\TplProducerConsumerLabs.csproj", "{F8297875-9B3D-40F8-822F-798D2B94E306}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PubSubBlockingCollectionLabs", "Multithreading\DesignPatterns\ProducerConsumer\ProducerConsumerLabs\PubSubBlockingCollectionLabs.csproj", "{F8297875-9B3D-40F8-822F-798D2B94E306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

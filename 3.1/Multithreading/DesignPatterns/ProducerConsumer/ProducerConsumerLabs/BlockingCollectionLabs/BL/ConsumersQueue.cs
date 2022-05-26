@@ -26,7 +26,7 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
             _maxConsumers = maxConsumers;
             _prefetchCount = prefetchCount;
             _ConsumersDictionary = new ConcurrentDictionary<int, ConsumerConnection>();
-            _roundrobin = GetRoundRobinList();
+            _roundrobin = GetRoundRobinList(maxConsumers);
         }
 
         public ConsumersQueue StartConsumer()
@@ -54,6 +54,13 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
         {
             Thread.Sleep(2000);
 
+            Console.WriteLine("\n");
+            Console.WriteLine($"Não existem mais mensagens a serem processadas.");
+            Console.WriteLine("\n");
+        }
+
+        public void ShowSummaryInfo()
+        {
             long qtdeProcessadas = default;
 
             foreach (KeyValuePair<int, ConsumerConnection> item in _ConsumersDictionary)
@@ -89,11 +96,11 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
 
             return messages;
         }
-        private RoundRobinList<int> GetRoundRobinList()
+        private RoundRobinList<int> GetRoundRobinList(int maxConsumers)
         {
             var roundList = new List<int>();
 
-            for (int i = 1; i < _maxConsumers; i++)
+            for (int i = 1; i <= maxConsumers; i++)
             {
                 roundList.Add(i);
             }
@@ -108,11 +115,11 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
             while (_ConsumersDictionary.Count < _maxConsumers)
             {
                 var consumerID = _ConsumersDictionary.Count + 1;
-                var consumerCon = new ConsumerConnection(consumerID);
+                var consumerConn = new ConsumerConnection(consumerID);
 
-                Task producer = taskFactory.StartNew(() => { consumerCon.StartSendMessagesClients(); });
+                Task producer = taskFactory.StartNew(() => { consumerConn.StartSendMessagesClients(); });
 
-                _ConsumersDictionary.TryAdd(consumerID, consumerCon);
+                _ConsumersDictionary.TryAdd(consumerID, consumerConn);
             }
 
             return this;
