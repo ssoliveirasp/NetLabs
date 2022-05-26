@@ -8,21 +8,21 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
 {
     public class ProducerQueue
     {
-        private int _maxProducers;
-        private int _maxMessagesPerProducer;
+        private readonly MessageBroken _broken;
+        private readonly int _maxProducers;
+        private readonly int _maxMessagesPerProducer;
         private long _messagesCount;
-        private MessageBroken _broken;
+        
 
         public long LimitMessages { get => (_maxMessagesPerProducer * _maxProducers); }
-
         public bool IsAddingCompleted { get => (_messagesCount >= LimitMessages); }
         public int MaxProducers { get => _maxProducers; }
 
-        public ProducerQueue(int maxProducers = 2, int maxMessagesPerProducer = 10)
+        public ProducerQueue(MessageBroken broken,int maxProducers = 2, int maxMessagesPerProducer = 10)
         {
+            _broken = broken;
             _maxProducers = maxProducers;
             _maxMessagesPerProducer = maxMessagesPerProducer;
-            _broken = new MessageBroken();
         }
 
         public ProducerQueue CreateProducers()
@@ -32,7 +32,7 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
 
             while (blockingProducers.Count < _maxProducers)
             {
-                Task producer = taskFactory.StartNew(() => { AddMessagesPerProducer();  });
+                Task producer = taskFactory.StartNew(() => { AddMessagesPerProducer(); });
 
                 blockingProducers.Add(producer);
             }
@@ -70,15 +70,18 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
             return this;
         }
 
-        public ProducerQueue ShowSummaryProperties()
+        public ProducerQueue ShowSummaryProperties(bool showEndProcessInfo = false)
         {
             Console.ResetColor();
             Console.WriteLine($"Producers              - Count: {_maxProducers.ToString()}");
             Console.WriteLine($"Max Messages Producers - Count: {_maxMessagesPerProducer.ToString()}");
-            Console.WriteLine($"Limit Messages         - Count: {LimitMessages.ToString()}");
-            Console.WriteLine($"Messages Created       - Count: {_messagesCount.ToString()}");
 
+            if (showEndProcessInfo)
+            {
+                Console.WriteLine($"Limit Messages         - Count: {LimitMessages.ToString()}");
+                Console.WriteLine($"Messages Created       - Count: {_messagesCount.ToString()}");
+            }
             return this;
-        }        
+        }
     }
 }

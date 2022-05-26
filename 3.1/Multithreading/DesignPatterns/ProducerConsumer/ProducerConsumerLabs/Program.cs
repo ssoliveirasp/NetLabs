@@ -10,48 +10,27 @@ namespace ProducerConsumerLabs
     {
         static void Main(string[] args)
         {
-            var producer = new ProducerQueue(maxProducers: 50, maxMessagesPerProducer: 5);
+            var mbroken = new MessageBroken();
+
+            var producer = new ProducerQueue(maxProducers: 5,
+                                             maxMessagesPerProducer: 5,
+                                             broken: mbroken);
+
+            var consumers = new ConsumersQueue(broken: mbroken,
+                                               maxConsumers: 5,
+                                               prefetchCount: 2);
 
             producer
               .ShowSummaryProperties()
               .CreateProducers()
               .WaitingProducers()
-              .ShowSummaryProperties();
+              .ShowSummaryProperties(showEndProcessInfo: true);
 
-            //Task consumer = taskFactory.StartNew(() =>
-            //{
-            //    while (!blockingCollection.IsCompleted)
-            //    {
-            //        try
-            //        {
-            //            int imageID = blockingCollection.Take();
-            //            ProcessImage(imageID);
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            //Log exception 
-            //        }
-            //    }
-            //});
-
-
+            consumers
+              .CreateConsumers()
+              .StartConsumer();
 
             Console.Read();
-
-        }
-
-        public static int ReadImageFromDB()
-        {
-            Thread.Sleep(1000);
-            Console.WriteLine("Image is read");
-            return 1;
-        }
-
-        public static void ProcessImage(int imageID)
-        {
-            Thread.Sleep(1000);
-            Console.WriteLine("Image is processed");
-
         }
     }
 }
