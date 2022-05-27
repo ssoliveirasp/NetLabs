@@ -55,7 +55,7 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
             Thread.Sleep(2000);
 
             Console.WriteLine("\n");
-            Console.WriteLine($"Não existem mais mensagens a serem processadas.");
+            Console.WriteLine($"[{nameof(ConsumersQueue)}] Não existem mais mensagens a serem processadas.");
             Console.WriteLine("\n");
         }
 

@@ -11,7 +11,7 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
 {
     public class ConsumerConnection
     {
-        private BufferBlock<MessageQueue> _bufferMessages = new BufferBlock<MessageQueue>();
+        private BufferBlock<MessageQueue> _bufferMessages;
         private long _messageProcessed;
         public long MessagesProcessed { get => _messageProcessed; }
         public readonly int _id;
@@ -19,6 +19,7 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
         public ConsumerConnection(int id)
         {
             _id = id;
+            _bufferMessages = new BufferBlock<MessageQueue>();
         }
 
         //Envia as Mensagens
@@ -26,20 +27,27 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
         {
             while (true)
             {
-               if (_bufferMessages.Count > 0)
+                if (_bufferMessages.Count > 0)
                 {
                     _bufferMessages.TryReceiveAll(out var messages);
                 }
+
+                Thread.Sleep(3000);
             }
         }
 
         public void SendMessageClient(IEnumerable<MessageQueue> messages)
         {
+            SendMessageClient(_bufferMessages, messages);
+        }
+
+        public void SendMessageClient(ITargetBlock<MessageQueue> buffer, IEnumerable<MessageQueue> messages)
+        {
             foreach (var item in messages)
             {
                 _bufferMessages.Post<MessageQueue>(item);
                 Interlocked.Increment(ref _messageProcessed);
-            }         
+            }
         }
     }
 }
