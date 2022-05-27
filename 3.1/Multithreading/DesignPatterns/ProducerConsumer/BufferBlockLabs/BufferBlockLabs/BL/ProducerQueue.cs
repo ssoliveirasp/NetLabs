@@ -1,10 +1,12 @@
-﻿using System;
+﻿using BufferBlockLabs.BufferBlockLabs.Model;
+using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using TplProducerConsumerLabs.BlockingCollectionLabs.Model;
 
-namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
+namespace BufferBlockLabs.BufferBlockLabs.BL
 {
     public class ProducerQueue
     {
@@ -12,12 +14,12 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
         private readonly int _maxProducers;
         private readonly int _maxMessagesPerProducer;
         private long _messagesCount;
-        
+
         public long LimitMessages { get => (_maxMessagesPerProducer * _maxProducers); }
         public bool IsAddingCompleted { get => (_messagesCount >= LimitMessages); }
         public int MaxProducers { get => _maxProducers; }
 
-        public ProducerQueue(MessageBroken broken,int maxProducers = 2, int maxMessagesPerProducer = 10)
+        public ProducerQueue(MessageBroken broken, int maxProducers = 2, int maxMessagesPerProducer = 10)
         {
             _broken = broken;
             _maxProducers = maxProducers;

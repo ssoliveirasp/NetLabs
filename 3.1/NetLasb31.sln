@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProducerConsumer", "Produce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PubSubBlockingCollectionLabs", "Multithreading\DesignPatterns\ProducerConsumer\ProducerConsumerLabs\PubSubBlockingCollectionLabs.csproj", "{F8297875-9B3D-40F8-822F-798D2B94E306}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BufferBlockLabs", "Multithreading\DesignPatterns\ProducerConsumer\BufferBlockLabs\BufferBlockLabs.csproj", "{A0D5C105-B235-4A6E-A884-F94A674A51D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{F8297875-9B3D-40F8-822F-798D2B94E306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8297875-9B3D-40F8-822F-798D2B94E306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8297875-9B3D-40F8-822F-798D2B94E306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D5C105-B235-4A6E-A884-F94A674A51D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D5C105-B235-4A6E-A884-F94A674A51D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D5C105-B235-4A6E-A884-F94A674A51D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D5C105-B235-4A6E-A884-F94A674A51D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +97,7 @@ Global
 		{281D5001-816F-47A5-912D-3F2F9F50BD55} = {6BB78D39-ACF0-497C-A908-A41DC59D9BF2}
 		{76180AD0-8E32-4B08-BAD9-90CDA6BC86BD} = {DD9462F4-9B51-4AB4-9767-9EED146034BA}
 		{F8297875-9B3D-40F8-822F-798D2B94E306} = {76180AD0-8E32-4B08-BAD9-90CDA6BC86BD}
+		{A0D5C105-B235-4A6E-A884-F94A674A51D7} = {76180AD0-8E32-4B08-BAD9-90CDA6BC86BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE1C778A-6E00-423E-904A-5B30B82259BC}
