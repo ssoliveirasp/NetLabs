@@ -10,21 +10,15 @@ namespace CreateThreadsLabs.BL
             ExecuteShortRunningOperation(null);
         }
 
-        public static void ExecuteShortRunningOperation(object milliseconds)
+        public static void ExecuteShortRunningOperation(object id)
         {
-            if (milliseconds == null || (int)milliseconds <= 1000)
-                milliseconds = 1000;
-
-            Thread.Sleep((int)milliseconds);
+            Thread.Sleep(1000);
 
             LogThreads.LogCompleted(nameof(ExecuteShortRunningOperation));
         }
-        public static void ExecuteLongRunningOperation(object milliseconds)
+        public static void ExecuteLongRunningOperation(object id)
         {
-            if (milliseconds == null || (int)milliseconds <= 250000)
-                milliseconds = 250000;
-
-            Thread.Sleep((int)milliseconds);
+            Thread.Sleep(250000);
             LogThreads.LogCompleted(nameof(ExecuteShortRunningOperation));
         }
     }

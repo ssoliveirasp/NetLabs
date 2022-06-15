@@ -49,51 +49,5 @@ namespace CreateThreadsLabs.BL
 
             return this;
         }
-
-        public CreateThreadsManager CreateStart_ThreadPool_QueueUserWorkItem_ParamLess()
-        {
-            ThreadPool.QueueUserWorkItem(ProcessOperationStatic.ExecuteShortRunningOperation);
-
-            return this;
-        }
-
-        public CreateThreadsManager CreateStart_ThreadPool_QueueUserWorkItem_Background_True()
-        {
-            ThreadPool.QueueUserWorkItem((_) =>
-            {
-                Thread.CurrentThread.IsBackground = true;
-                ProcessOperationStatic.ExecuteShortRunningOperation(1000);
-                LogThreads.LogCompleted(nameof(CreateThreadsManager),
-                    nameof(CreateStart_ThreadPool_QueueUserWorkItem_Background_True));
-            });
-
-            return this;
-        }
-
-        public CreateThreadsManager CreateStart_ThreadPool_QueueUserWorkItem_Background_False()
-        {
-            ThreadPool.QueueUserWorkItem((_) =>
-            {
-                Thread.CurrentThread.IsBackground = false;
-                ProcessOperationStatic.ExecuteShortRunningOperation(1000);
-                LogThreads.LogCompleted(nameof(CreateThreadsManager), "CreateStart_ThreadPool_QueueUserWorkItem_Background_False");
-            });
-
-            return this;
-        }
-
-        public CreateThreadsManager CreateStart_Task_Run_WithParam()
-        {
-            Task t = Task.Run(() => ProcessOperationStatic.ExecuteLongRunningOperation(5000));
-
-            return this;
-        }
-
-        public CreateThreadsManager CreateStart_Task_Factory_StartNew_WithParam()
-        {
-            Task tf = Task.Factory.StartNew(() => ProcessOperationStatic.ExecuteLongRunningOperation(5000));
-
-            return this;
-        }
     }
 }

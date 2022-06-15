@@ -10,18 +10,25 @@ namespace CreateThreadsLabs
     {
         static void Main(string[] args)
         {
-            var manager = new CreateThreadsManager();
+            var threadManager = new CreateThreadsManager();
+            var poolManager = new CreateThreadsPoolManager();
+            var taskManager = new CreateTaskManager();
 
-            manager
+            threadManager
                 .CreateStart_Thread_WithThreadStart_ParameterLess()
                 .CreateStart_Thread_WithoutThreadStart_ParameterLess()
                 .CreateStart_Thread_ClassMethod()
-                .CreateStart_Thread_ParameterizedThreadStart()
+                .CreateStart_Thread_ParameterizedThreadStart();
+
+            poolManager
                 .CreateStart_ThreadPool_QueueUserWorkItem_ParamLess()
                 .CreateStart_ThreadPool_QueueUserWorkItem_Background_True()
-                .CreateStart_ThreadPool_QueueUserWorkItem_Background_False()
+                .CreateStart_ThreadPool_QueueUserWorkItem_Background_False();
+
+            taskManager
                 .CreateStart_Task_Run_WithParam()
-                .CreateStart_Task_Factory_StartNew_WithParam();
+                .CreateStart_Task_Factory_StartNew_WithParam()
+                .CreateStart_Task_LambdaExpression();
 
             Console.WriteLine($"Pressione uma tecla. Para finalizar.");
             Console.ReadKey();
