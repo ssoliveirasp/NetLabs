@@ -15,7 +15,7 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
         private readonly int _maxConsumers;
         private readonly int _prefetchCount;
 
-        ConcurrentDictionary<int, ConsumerConnection> _ConsumersDictionary;
+        readonly ConcurrentDictionary<int, ConsumerConnection> _ConsumersDictionary;
         RoundRobinList<int> _roundrobin;
 
         public bool CanceledOperation { get; set; } = false;
@@ -116,12 +116,12 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
 
             while (_ConsumersDictionary.Count < _maxConsumers)
             {
-                var consumerID = _ConsumersDictionary.Count + 1;
-                var consumerConn = new ConsumerConnection(consumerID);
+                var consumerId = _ConsumersDictionary.Count + 1;
+                var consumerConn = new ConsumerConnection(consumerId);
 
                 Task producer = taskFactory.StartNew(() => { consumerConn.StartSendMessagesClients(); });
 
-                _ConsumersDictionary.TryAdd(consumerID, consumerConn);
+                _ConsumersDictionary.TryAdd(consumerId, consumerConn);
             }
 
             return this;

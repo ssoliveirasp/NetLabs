@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using ThreadPriorityLabs.ThreadPriorityLabs.BL;
 
-namespace MultithreadingLabs.Threading
+namespace ThreadPriorityLabs.ThreadPriorityLabs.UI
 {
     public class ScoreThreadPriotiryUI
     {
-        List<ThreadWithState> ts = new List<ThreadWithState>();
+        readonly List<ThreadWithState> ts = new List<ThreadWithState>();
 
         public void Add(ThreadWithState t)
         {
@@ -21,7 +22,7 @@ namespace MultithreadingLabs.Threading
 
                 foreach (ThreadWithState x in ts)
                 {
-                    Console.WriteLine($"{x.ID} | %: {x.Percentage()} | {x.numberValue.ToString("0000000000000")} | Priority: {x.Priority}");
+                    Console.WriteLine($"{x.Id} | %: {x.Percentage()} | {x.NumberValue.ToString("0000000000000")} | Priority: {x.Priority}");
                 }
 
                 Thread.Sleep(600);

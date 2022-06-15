@@ -1,13 +1,12 @@
-﻿using RoundRobin;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using TplProducerConsumerLabs.BlockingCollectionLabs.Model;
+using PubSubBlockingCollectionLabs.BlockingCollectionLabs.Model;
+using RoundRobin;
 
-namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
+namespace PubSubBlockingCollectionLabs.BlockingCollectionLabs.BL
 {
     public class ConsumersQueue
     {
@@ -15,7 +14,7 @@ namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
         private readonly int _maxConsumers;
         private readonly int _prefetchCount;
 
-        ConcurrentDictionary<int, ConsumerConnection> _ConsumersDictionary;
+        readonly ConcurrentDictionary<int, ConsumerConnection> _ConsumersDictionary;
         RoundRobinList<int> _roundrobin;
 
         public bool CanceledOperation { get; set; } = false;

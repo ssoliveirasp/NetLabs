@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace TplProducerConsumerLabs.BlockingCollectionLabs.Model
+namespace PubSubBlockingCollectionLabs.BlockingCollectionLabs.Model
 {
     public class MessageQueue
     {

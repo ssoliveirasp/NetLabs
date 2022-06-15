@@ -1,6 +1,8 @@
 ﻿using System.Threading;
+using ThreadPriorityLabs.ThreadPriorityLabs.BL;
+using ThreadPriorityLabs.ThreadPriorityLabs.UI;
 
-namespace MultithreadingLabs.Threading
+namespace ThreadPriorityLabs.ThreadPriorityLabs
 {
     public class ThreadPriorityThreadPool
     {

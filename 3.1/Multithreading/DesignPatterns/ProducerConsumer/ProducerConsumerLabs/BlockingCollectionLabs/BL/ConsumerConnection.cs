@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using TplProducerConsumerLabs.BlockingCollectionLabs.Model;
+using PubSubBlockingCollectionLabs.BlockingCollectionLabs.Model;
 
-namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
+namespace PubSubBlockingCollectionLabs.BlockingCollectionLabs.BL
 {
     public class ConsumerConnection
     {
-        private BlockingCollection<MessageQueue> _blockingMessage = new BlockingCollection<MessageQueue>();
+        private readonly BlockingCollection<MessageQueue> _blockingMessage = new BlockingCollection<MessageQueue>();
         private long _messageProcessed;
         public long MessagesProcessed { get => _messageProcessed; }
         public readonly int _id;

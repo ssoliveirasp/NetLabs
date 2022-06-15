@@ -11,14 +11,14 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
 {
     public class ConsumerConnection
     {
-        private BufferBlock<MessageQueue> _bufferMessages;
+        private readonly BufferBlock<MessageQueue> _bufferMessages;
         private long _messageProcessed;
         public long MessagesProcessed { get => _messageProcessed; }
-        public readonly int _id;
+        public readonly int Id;
 
         public ConsumerConnection(int id)
         {
-            _id = id;
+            Id = id;
             _bufferMessages = new BufferBlock<MessageQueue>();
         }
 

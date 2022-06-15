@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31529.145
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MultiThreading", "MultiThreading", "{D2C2E247-7A5D-4524-82EE-5C4258210E93}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorSyncLabs", "Multithr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Priority", "Priority", "{BCB73161-1C0F-463F-BB09-CCFAD91EE043}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPriority", "Multithreading\Priority\ThreadPriority\ThreadPriority.csproj", "{83A4C3D4-E0E9-4932-AEEC-28AEF5A960E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPriorityLabs", "Multithreading\Priority\ThreadPriority\ThreadPriorityLabs.csproj", "{83A4C3D4-E0E9-4932-AEEC-28AEF5A960E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Waiting", "Waiting", "{B803817E-4068-488C-A151-1336D8AD5983}"
 EndProject
@@ -38,6 +38,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PubSubBlockingCollectionLabs", "Multithreading\DesignPatterns\ProducerConsumer\ProducerConsumerLabs\PubSubBlockingCollectionLabs.csproj", "{F8297875-9B3D-40F8-822F-798D2B94E306}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BufferBlockLabs", "Multithreading\DesignPatterns\ProducerConsumer\BufferBlockLabs\BufferBlockLabs.csproj", "{A0D5C105-B235-4A6E-A884-F94A674A51D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateThreads", "CreateThreads", "{12633EFF-6BCC-4F7C-9859-A6067A66567D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateThreadsLabs", "Multithreading\CreateThreads\CreateThreadsLabs\CreateThreadsLabs.csproj", "{99C06BAD-2333-4BA1-A30D-22C0CC92C4E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{A0D5C105-B235-4A6E-A884-F94A674A51D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0D5C105-B235-4A6E-A884-F94A674A51D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0D5C105-B235-4A6E-A884-F94A674A51D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99C06BAD-2333-4BA1-A30D-22C0CC92C4E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C06BAD-2333-4BA1-A30D-22C0CC92C4E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C06BAD-2333-4BA1-A30D-22C0CC92C4E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C06BAD-2333-4BA1-A30D-22C0CC92C4E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +106,8 @@ Global
 		{76180AD0-8E32-4B08-BAD9-90CDA6BC86BD} = {DD9462F4-9B51-4AB4-9767-9EED146034BA}
 		{F8297875-9B3D-40F8-822F-798D2B94E306} = {76180AD0-8E32-4B08-BAD9-90CDA6BC86BD}
 		{A0D5C105-B235-4A6E-A884-F94A674A51D7} = {76180AD0-8E32-4B08-BAD9-90CDA6BC86BD}
+		{12633EFF-6BCC-4F7C-9859-A6067A66567D} = {D2C2E247-7A5D-4524-82EE-5C4258210E93}
+		{99C06BAD-2333-4BA1-A30D-22C0CC92C4E0} = {12633EFF-6BCC-4F7C-9859-A6067A66567D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE1C778A-6E00-423E-904A-5B30B82259BC}

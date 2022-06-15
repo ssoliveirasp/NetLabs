@@ -1,14 +1,13 @@
-﻿using System;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
+using ThreadPriorityLabs.ThreadPriorityLabs.BL;
+using ThreadPriorityLabs.ThreadPriorityLabs.UI;
 
-namespace MultithreadingLabs.Threading
+namespace ThreadPriorityLabs.ThreadPriorityLabs
 {
     public class ThreadPriorityManualCreate
     {
         public static void Execute()
         {
-
             var tStateLowest1 = new ThreadWithState("Thread 1", ThreadPriority.Lowest);
             var tStateBelowNormal2 = new ThreadWithState("Thread 2", ThreadPriority.BelowNormal);
             var tStateNormal3 = new ThreadWithState("Thread 3", ThreadPriority.Normal);

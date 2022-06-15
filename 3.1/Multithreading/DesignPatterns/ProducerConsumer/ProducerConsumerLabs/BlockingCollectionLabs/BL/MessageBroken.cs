@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using TplProducerConsumerLabs.BlockingCollectionLabs.Model;
+using PubSubBlockingCollectionLabs.BlockingCollectionLabs.Model;
 
-namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
+namespace PubSubBlockingCollectionLabs.BlockingCollectionLabs.BL
 {
     public class MessageBroken
     {
-        BlockingCollection<MessageQueue> _blockingMessage;
+        readonly BlockingCollection<MessageQueue> _blockingMessage;
 
         public BlockingCollection<MessageQueue> Messages { get => _blockingMessage; }
 

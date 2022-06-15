@@ -11,8 +11,8 @@ namespace MultithreadingLabs.Waiting
 {
     public class MonitorWaitingSync
     {
-        static WaitingScoreModel model = new WaitingScoreModel();
-        private static object _lock_WithMonitorSync = new object();
+        static readonly WaitingScoreModel model = new WaitingScoreModel();
+        private static readonly object _lock_WithMonitorSync = new object();
         private static object _lock_MonitorWaiting = new object();
         public bool EmPausa { get; set; }
 

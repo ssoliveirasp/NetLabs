@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Concurrent;
-using System.Threading;
-using System.Threading.Tasks;
-using TplProducerConsumerLabs.BlockingCollectionLabs.BL;
+using PubSubBlockingCollectionLabs.BlockingCollectionLabs.BL;
 
-namespace ProducerConsumerLabs
+namespace PubSubBlockingCollectionLabs
 {
     class Program
     {

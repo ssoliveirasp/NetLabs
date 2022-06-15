@@ -9,7 +9,7 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
 {
     public class MessageBroken
     {
-        BufferBlock<MessageQueue> _blockingMessage;
+        readonly BufferBlock<MessageQueue> _blockingMessage;
 
         public BufferBlock<MessageQueue> Messages { get => _blockingMessage; }
 

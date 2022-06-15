@@ -1,14 +1,14 @@
-﻿using MultithreadingLabs.Threading;
-using System;
+﻿using System;
+using ThreadPriorityLabs.ThreadPriorityLabs;
 
 namespace ThreadPriorityLabs
 {
     class Program
     {
-        static bool MainMenuExecuted = false;
-
+       
         static void Main(string[] args)
         {
+            bool MainMenuExecuted;
 
             while (true)
             {

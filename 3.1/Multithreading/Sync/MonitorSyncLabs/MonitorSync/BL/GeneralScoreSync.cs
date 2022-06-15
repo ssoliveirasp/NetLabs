@@ -9,12 +9,12 @@ namespace MultithreadingLabs.Synchronization.MonitorSyncLabs
 {
     public class GeneralScoreSync
     {
-        private static object _lock_WithMonitorSync = new object();
-        private static object _lock_WithLockSync = new object();
+        private static readonly object _lock_WithMonitorSync = new object();
+        private static readonly object _lock_WithLockSync = new object();
 
-        public PontuationScore Pontuation_WithoutMonitorSync { get; private set; } = new PontuationScore("Pontuation_WithoutMonitorSync");
-        public PontuationScore Pontuation_WithMonitorSync { get; private set; } = new PontuationScore("Pontuation_WithMonitorSync");
-        public PontuationScore Pontuation_WithLockSync { get; private set; } = new PontuationScore("Pontuation_WithLockSync");
+        public PontuationScore Pontuation_WithoutMonitorSync { get; } = new PontuationScore("Pontuation_WithoutMonitorSync");
+        public PontuationScore Pontuation_WithMonitorSync { get; } = new PontuationScore("Pontuation_WithMonitorSync");
+        public PontuationScore Pontuation_WithLockSync { get; } = new PontuationScore("Pontuation_WithLockSync");
 
         public void AddPontuation_WithoutSync()
         {

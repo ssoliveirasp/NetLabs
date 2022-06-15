@@ -2,9 +2,9 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using TplProducerConsumerLabs.BlockingCollectionLabs.Model;
+using PubSubBlockingCollectionLabs.BlockingCollectionLabs.Model;
 
-namespace TplProducerConsumerLabs.BlockingCollectionLabs.BL
+namespace PubSubBlockingCollectionLabs.BlockingCollectionLabs.BL
 {
     public class ProducerQueue
     {

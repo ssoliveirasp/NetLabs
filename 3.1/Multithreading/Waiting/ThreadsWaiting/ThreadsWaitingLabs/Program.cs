@@ -5,10 +5,11 @@ namespace ThreadsWaitingLabs
 {
     class Program
     {
-        static bool MainMenuExecuted = false;
-
+       
         static void Main(string[] args)
         {
+            bool MainMenuExecuted = false;
+
 
             while (true)
             {
