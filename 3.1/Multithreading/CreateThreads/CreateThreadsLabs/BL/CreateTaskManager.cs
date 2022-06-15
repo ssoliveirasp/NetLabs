@@ -14,6 +14,20 @@ namespace CreateThreadsLabs.BL
             return this;
         }
 
+        public CreateTaskManager CreateStart_Task_Run_ActionDelegate()
+        {
+            Task.Run(new Action(ProcessOperationStatic.ExecuteShortRunningOperationWithoutParameter));
+
+            return this;
+        }
+
+        public CreateTaskManager CreateStart_Task_Run_Delegate()
+        {
+            Task.Run(delegate { ProcessOperationStatic.ExecuteShortRunningOperation(1000); });
+            
+            return this;
+        }
+
         public CreateTaskManager CreateStart_Task_Factory_StartNew_WithParam()
         {
             Task tf = Task.Factory.StartNew(() => ProcessOperationStatic.ExecuteLongRunningOperation(5000));
@@ -21,9 +35,27 @@ namespace CreateThreadsLabs.BL
             return this;
         }
 
-        public CreateTaskManager CreateStart_Task_LambdaExpression()
+        public CreateTaskManager CreateStart_NewTask_LambdaExpression()
         {
             var task = new Task(() => ProcessOperationStatic.ExecuteShortRunningOperation(1000));
+
+            task.Start();
+
+            return this;
+        }
+
+        public CreateTaskManager CreateStart_NewTask_ActionDelegate()
+        {
+            var task = new Task(new Action(ProcessOperationStatic.ExecuteShortRunningOperationWithoutParameter));
+
+            task.Start();
+
+            return this;
+        }
+
+        public CreateTaskManager CreateStart_NewTask_UsingDelegate()
+        {
+            Task task = new Task(delegate { ProcessOperationStatic.ExecuteShortRunningOperation(1000); });
 
             task.Start();
 

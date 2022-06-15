@@ -27,8 +27,16 @@ namespace CreateThreadsLabs
 
             taskManager
                 .CreateStart_Task_Run_WithParam()
-                .CreateStart_Task_Factory_StartNew_WithParam()
-                .CreateStart_Task_LambdaExpression();
+                .CreateStart_Task_Run_ActionDelegate()
+                .CreateStart_Task_Run_Delegate();
+
+            taskManager
+                .CreateStart_Task_Factory_StartNew_WithParam();
+
+            taskManager
+                .CreateStart_NewTask_LambdaExpression()
+                .CreateStart_NewTask_ActionDelegate()
+                .CreateStart_NewTask_UsingDelegate();
 
             Console.WriteLine($"Pressione uma tecla. Para finalizar.");
             Console.ReadKey();
