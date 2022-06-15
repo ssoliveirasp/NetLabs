@@ -12,42 +12,16 @@ namespace CreateThreadsLabs
         {
             var manager = new CreateThreadsManager();
 
-            var processOperation = new ProcessOperation();
-
-            var tScoreThread2 = new Thread(ProcessOperationStatic.ExecuteShortRunningOperationWithoutParameter);
-            var tScoreThread3 = new Thread(processOperation.ExecuteLongRunningOperation);
-            var tscoreThread4 = new Thread(new ParameterizedThreadStart(ProcessOperationStatic.ExecuteLongRunningOperation));
-
             manager
-             .CreateStart_ThreadWithThreadStart();
-            
-            tScoreThread2.Start();
-
-            tScoreThread3.Start();
-            tScoreThread3.IsBackground = true;
-
-            tscoreThread4.Start(10000000);
-            tscoreThread4.IsBackground = true;
-
-            ThreadPool.QueueUserWorkItem(ProcessOperationStatic.ExecuteShortRunningOperation);
-
-            ThreadPool.QueueUserWorkItem((_) =>
-            {
-                Thread.CurrentThread.IsBackground = true;
-                ProcessOperationStatic.ExecuteShortRunningOperation(1000);
-                LogThreads.LogCompleted(nameof(Main), "QueueUserWorkItem_Local");
-            });
-
-            ThreadPool.QueueUserWorkItem((_) =>
-            {
-                Thread.CurrentThread.IsBackground = false;
-                ProcessOperationStatic.ExecuteShortRunningOperation(1000);
-                LogThreads.LogCompleted(nameof(Main), "QueueUserWorkItem_Local");
-            });
-
-            Task t = Task.Run(() => ProcessOperationStatic.ExecuteLongRunningOperation(5000));
-
-            Task tf = Task.Factory.StartNew(() => ProcessOperationStatic.ExecuteLongRunningOperation(5000));
+                .CreateStart_Thread_WithThreadStart_ParameterLess()
+                .CreateStart_Thread_WithoutThreadStart_ParameterLess()
+                .CreateStart_Thread_ClassMethod()
+                .CreateStart_Thread_ParameterizedThreadStart()
+                .CreateStart_ThreadPool_QueueUserWorkItem_ParamLess()
+                .CreateStart_ThreadPool_QueueUserWorkItem_Background_True()
+                .CreateStart_ThreadPool_QueueUserWorkItem_Background_False()
+                .CreateStart_Task_Run_WithParam()
+                .CreateStart_Task_Factory_StartNew_WithParam();
 
             Console.WriteLine($"Pressione uma tecla. Para finalizar.");
             Console.ReadKey();
