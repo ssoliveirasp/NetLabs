@@ -1,4 +1,5 @@
 ﻿Producer/consumer pattern
+
 One of the best patterns to execute long-running operations is the producer/consumer pattern. 
 In this pattern, there are producers and consumers, and one or more producers are connected to one or more consumers through a shared data structure known as BlockingCollection. 
 BlockingCollection is a fixed-sized collection used in parallel programming. 
@@ -25,12 +26,8 @@ _____|________              _____|_______
  
 
 
-System.Collections.Concurrent.BlockingCollection<T>	
+System.Threading.Tasks.Dataflow.BufferBlock<T>
 
-Fornece funcionalidades de bloqueio e delimitação para coleções thread-safe que implementam System.Collections.Concurrent.IProducerConsumerCollection<T>. 
-Os threads de produtor são bloqueados se nenhum slot estiver disponível, ou se a coleção estiver cheia. 
-Threads de consumidor são bloqueados se a coleção estiver vazia. 
-Esse tipo também oferece suporte ao acesso sem bloqueio de produtores e consumidores. 
-BlockingCollection<T> pode ser usado como uma classe base ou repositório de backup para fornecer bloqueio e limitação a qualquer classe de coleção que ofereça suporte a IEnumerable<T>.
+Especifica o tipo de dados armazenados em buffer por esse bloco de fluxo de dados.
 
-https://docs.microsoft.com/pt-br/dotnet/standard/parallel-programming/data-structures-for-parallel-programming
+https://docs.microsoft.com/pt-br/dotnet/api/system.threading.tasks.dataflow.bufferblock-1?view=net-6.0
