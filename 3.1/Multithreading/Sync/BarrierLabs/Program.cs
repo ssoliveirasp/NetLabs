@@ -12,7 +12,7 @@ namespace BarrierLabs
     {
         static void Main(string[] args)
         {
-            BarrierDemo.BarrierSample();
+            BarrierTeaMaker.MakeTea();
         }
     }
 }
