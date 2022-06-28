@@ -7,9 +7,9 @@ namespace MultithreadingLabs.Synchronization.MonitorSyncLabs.UI
 {
     public class GeneralScoreUI
     {
-        readonly GeneralScoreSync _score = new GeneralScoreSync();
+        readonly PontuationManager _score = new PontuationManager();
 
-        public GeneralScoreUI(GeneralScoreSync score)
+        public GeneralScoreUI(PontuationManager score)
         {
             _score = score;
         }

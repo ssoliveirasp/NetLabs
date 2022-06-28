@@ -12,7 +12,7 @@ namespace MultithreadingLabs.Synchronization.MonitorSyncLabs
 
         public static void Execute()
         {
-            GeneralScoreSync score = new GeneralScoreSync();
+            PontuationManager score = new PontuationManager();
             GeneralScoreUI screen = new GeneralScoreUI(score);
 
             ThreadPool.QueueUserWorkItem(AddPontuation_WithoutSync, score);
@@ -29,20 +29,20 @@ namespace MultithreadingLabs.Synchronization.MonitorSyncLabs
 
         private static void AddPontuation_WithoutSync(object data)
         {
-            var s = (GeneralScoreSync)data;
-            s.AddPontuation_WithoutSync();
+            var s = (PontuationManager)data;
+            s.PontuationWithoutSync.AddPontuation_WithoutSync();
         }
 
         private static void AddPontuation_WithMonitorSync(object data)
         {
-            var s = (GeneralScoreSync)data;
-            s.AddPontuation_WithMonitorSync();
+            var s = (PontuationManager)data;
+            s.PontuationMonitorSync.AddPontuation_WithMonitorSync();
         }
 
         private static void AddPontuation_WithLockSync(object data)
         {
-            var s = (GeneralScoreSync)data;
-            s.AddPontuation_WithLockSync();
+            var s = (PontuationManager)data;
+            s.PontuationLockSync.AddPontuation_WithLockSync();
         }
 
         private static void UpdateScreen(object data)
