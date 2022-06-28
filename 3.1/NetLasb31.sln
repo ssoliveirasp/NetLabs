@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipeline", "Pipeline", "{DC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Syncronization", "Syncronization", "{ED789995-5890-435E-82AC-E3697345DAF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorSyncLabs", "Multithreading\Sync\MonitorSyncLabs\MonitorSyncLabs.csproj", "{AEA3F719-264D-4D3D-8883-AE9EB5E220DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorScore", "Multithreading\Sync\MonitorSyncLabs\MonitorScore.csproj", "{AEA3F719-264D-4D3D-8883-AE9EB5E220DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Priority", "Priority", "{BCB73161-1C0F-463F-BB09-CCFAD91EE043}"
 EndProject
@@ -47,17 +47,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskWaitingLabs", "Multithr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Partitioner", "Partitioner", "{843E0DB4-A410-4A89-8E7A-F3C4EFE77D50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartitioningStrategyLabs", "Multithreading\Partitioner\loadbalancingPartitioner\PartitioningStrategyLabs.csproj", "{33305FA7-E6EA-4510-A909-34F7620C9BA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartitioningStrategyLabs", "Multithreading\Partitioner\loadbalancingPartitioner\PartitioningStrategyLabs.csproj", "{33305FA7-E6EA-4510-A909-34F7620C9BA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parallel.ForEach", "Parallel.ForEach", "{CE374A3C-3CA9-4BDB-98BC-AE285E4BC75E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelForEachLabs0", "Multithreading\DesignPatterns\Parallel.ForEach\Parallel.ForEachLabs\ParallelForEachLabs0.csproj", "{9D81ACE6-3C88-48E9-ADC9-4A3B022C3B60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParallelForEachLabs0", "Multithreading\DesignPatterns\Parallel.ForEach\Parallel.ForEachLabs\ParallelForEachLabs0.csproj", "{9D81ACE6-3C88-48E9-ADC9-4A3B022C3B60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parallel LINQ", "Parallel LINQ", "{2250FF86-DDAE-45A2-B68C-7CB46D92FD0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel.LinqLabs", "Multithreading\DesignPatterns\Parallel.LINQ\Parallel.LinqLabs\Parallel.LinqLabs.csproj", "{1BEA841B-23D1-4996-9681-400F65E25738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parallel.LinqLabs", "Multithreading\DesignPatterns\Parallel.LINQ\Parallel.LinqLabs\Parallel.LinqLabs.csproj", "{1BEA841B-23D1-4996-9681-400F65E25738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarrierLabs", "Multithreading\Sync\BarrierLabs\BarrierLabs.csproj", "{8DC7C0A6-2999-457B-BA7D-AFC9A726FCBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BarrierPhaseTea", "Multithreading\Sync\BarrierLabs\BarrierPhaseTea.csproj", "{8DC7C0A6-2999-457B-BA7D-AFC9A726FCBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorWriteFile", "Multithreading\Sync\MonitorWriteFiles\MonitorWriteFile.csproj", "{A97DC4BC-4B58-4865-B4E6-C3446985496B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +123,10 @@ Global
 		{8DC7C0A6-2999-457B-BA7D-AFC9A726FCBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DC7C0A6-2999-457B-BA7D-AFC9A726FCBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DC7C0A6-2999-457B-BA7D-AFC9A726FCBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97DC4BC-4B58-4865-B4E6-C3446985496B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97DC4BC-4B58-4865-B4E6-C3446985496B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97DC4BC-4B58-4865-B4E6-C3446985496B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97DC4BC-4B58-4865-B4E6-C3446985496B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +158,7 @@ Global
 		{2250FF86-DDAE-45A2-B68C-7CB46D92FD0B} = {DD9462F4-9B51-4AB4-9767-9EED146034BA}
 		{1BEA841B-23D1-4996-9681-400F65E25738} = {2250FF86-DDAE-45A2-B68C-7CB46D92FD0B}
 		{8DC7C0A6-2999-457B-BA7D-AFC9A726FCBA} = {ED789995-5890-435E-82AC-E3697345DAF8}
+		{A97DC4BC-4B58-4865-B4E6-C3446985496B} = {ED789995-5890-435E-82AC-E3697345DAF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE1C778A-6E00-423E-904A-5B30B82259BC}
