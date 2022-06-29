@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
-using MonitorRWFiles;
 
-namespace MutexLabs
+namespace MutexWriteFiles
 {
     internal class Program
     {
@@ -16,7 +14,7 @@ namespace MutexLabs
             {
                 foreach (var i in Enumerable.Range(1, tasksProcess.Length))
                 {
-                    tasksProcess[i - 1] = Task.Factory.StartNew(() => new MonitorWriteFile($"#{i}").WriteFile());
+                    tasksProcess[i - 1] = Task.Factory.StartNew(() => new MutexWriteFiles($"#{i}").WriteFile());
                 }
 
                 Task.WhenAll(tasksProcess);
@@ -30,15 +28,6 @@ namespace MutexLabs
             }
 
             Console.ReadKey();
-        }
-
-        public static void ExecuteShortRunningOperation(object id)
-        {
-            id ??= $"T{DateTime.Now.Second}";
-
-            var tp1 = new MonitorWriteFile($"{id}");
-
-            tp1.WriteFile();
         }
     }
 }

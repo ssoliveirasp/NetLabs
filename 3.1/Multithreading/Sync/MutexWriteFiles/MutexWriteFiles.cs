@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace MonitorRWFiles
+namespace MutexWriteFiles
 {
-    public class MonitorWriteFile
+    public class MutexWriteFiles
     {
         private readonly string ProcessName;
+        private static readonly Mutex Mutex = new Mutex();
 
-        public MonitorWriteFile(string processName)
+        public MutexWriteFiles(string processName)
         {
             ProcessName = processName;
         }
@@ -26,16 +27,17 @@ namespace MonitorRWFiles
 
             range.AsParallel().AsOrdered().ForAll(i =>
             {
-                
-                Monitor.Enter(Locker);
+                Thread.Sleep(10);
+
+                Mutex.WaitOne();
+
                 try
                 {
-                    File.AppendAllLines($"test.txt", new[] { $" {DateTime.Now} Process: {ProcessName} Number: {i.ToString()} TaskId: {Task.CurrentId}" });
-                    
+                    File.AppendAllLines("testMutex.txt", new[] { $" {DateTime.Now} Process: {ProcessName} Number: {i.ToString()} TaskId: {Task.CurrentId}" });
                 }
                 catch (AggregateException ex)
                 {
-                    Console.WriteLine($"Task has finished with exception { ex.InnerException.Message}");
+                    Console.WriteLine($"Task has finished with exception {ex.InnerException.Message}");
                 }
                 catch (Exception ex)
                 {
@@ -44,7 +46,7 @@ namespace MonitorRWFiles
 
                 finally
                 {
-                    Monitor.Exit(Locker);
+                    Mutex.ReleaseMutex();
                 }
             });
 
