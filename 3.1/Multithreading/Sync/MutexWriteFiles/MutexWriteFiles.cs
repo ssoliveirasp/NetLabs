@@ -11,11 +11,14 @@ namespace MutexWriteFiles
     public class MutexWriteFiles
     {
         private readonly string ProcessName;
-        private static readonly Mutex Mutex = new Mutex();
+        private readonly Mutex Mutex;
 
         public MutexWriteFiles(string processName)
         {
+            var MutexName = new DirectoryInfo(Directory.GetCurrentDirectory()).Name;
+
             ProcessName = processName;
+            Mutex = new Mutex(initiallyOwned: false, name: MutexName);
         }
         private static object Locker { get; } = new object();
 
