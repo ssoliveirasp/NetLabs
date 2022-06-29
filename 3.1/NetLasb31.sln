@@ -63,6 +63,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorWriteFile", "Multith
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutexWriteFiles", "Multithreading\Sync\MutexWriteFiles\MutexWriteFiles.csproj", "{2E03FFE1-9185-4386-8E8D-5E140940F35D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreWriteFiles", "Multithreading\Sync\SemaphoreWriteFiles\SemaphoreWriteFiles.csproj", "{B36F3204-AD59-41F1-BF79-93A6AD138DEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,10 @@ Global
 		{2E03FFE1-9185-4386-8E8D-5E140940F35D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E03FFE1-9185-4386-8E8D-5E140940F35D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E03FFE1-9185-4386-8E8D-5E140940F35D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B36F3204-AD59-41F1-BF79-93A6AD138DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B36F3204-AD59-41F1-BF79-93A6AD138DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B36F3204-AD59-41F1-BF79-93A6AD138DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B36F3204-AD59-41F1-BF79-93A6AD138DEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -166,6 +172,7 @@ Global
 		{8DC7C0A6-2999-457B-BA7D-AFC9A726FCBA} = {ED789995-5890-435E-82AC-E3697345DAF8}
 		{A97DC4BC-4B58-4865-B4E6-C3446985496B} = {ED789995-5890-435E-82AC-E3697345DAF8}
 		{2E03FFE1-9185-4386-8E8D-5E140940F35D} = {ED789995-5890-435E-82AC-E3697345DAF8}
+		{B36F3204-AD59-41F1-BF79-93A6AD138DEF} = {ED789995-5890-435E-82AC-E3697345DAF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE1C778A-6E00-423E-904A-5B30B82259BC}
