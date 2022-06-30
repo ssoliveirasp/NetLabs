@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreWriteFiles", "Mult
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoResetEventLabs", "Multithreading\Sync\AutoResetEventLabs\AutoResetEventLabs.csproj", "{84C1D29E-742A-4A17-94BD-00F8C2870CB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualResetEventLabs", "Multithreading\Sync\ManualResetEventLabs\ManualResetEventLabs.csproj", "{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,10 @@ Global
 		{84C1D29E-742A-4A17-94BD-00F8C2870CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84C1D29E-742A-4A17-94BD-00F8C2870CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84C1D29E-742A-4A17-94BD-00F8C2870CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -180,6 +186,7 @@ Global
 		{2E03FFE1-9185-4386-8E8D-5E140940F35D} = {ED789995-5890-435E-82AC-E3697345DAF8}
 		{B36F3204-AD59-41F1-BF79-93A6AD138DEF} = {ED789995-5890-435E-82AC-E3697345DAF8}
 		{84C1D29E-742A-4A17-94BD-00F8C2870CB9} = {ED789995-5890-435E-82AC-E3697345DAF8}
+		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E} = {ED789995-5890-435E-82AC-E3697345DAF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE1C778A-6E00-423E-904A-5B30B82259BC}
