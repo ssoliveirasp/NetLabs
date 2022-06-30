@@ -38,9 +38,13 @@ namespace SemaphoreWriteFiles
                 {
                     File.AppendAllLines("testMutex.txt", new[] { $" {DateTime.Now} Process: {ProcessName} Number: {i.ToString()} TaskId: {Task.CurrentId}" });
                 }
-                catch (AggregateException ex)
+                catch (AggregateException ae)
                 {
-                    Console.WriteLine($"Task has finished with exception {ex.InnerException.Message}");
+                    ae.Handle(ex =>
+                    {
+                        Console.WriteLine($"Task has finished with exception {ex.Message}");
+                        return true;
+                    });
                 }
                 catch (Exception ex)
                 {
