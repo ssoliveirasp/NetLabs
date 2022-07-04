@@ -61,13 +61,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BarrierPhaseTea", "Multithr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorWriteFile", "Multithreading\Sync\MonitorWriteFiles\MonitorWriteFile.csproj", "{A97DC4BC-4B58-4865-B4E6-C3446985496B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutexWriteFiles", "Multithreading\Sync\MutexWriteFiles\MutexWriteFiles.csproj", "{2E03FFE1-9185-4386-8E8D-5E140940F35D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutexWriteFiles", "Multithreading\Sync\MutexWriteFiles\MutexWriteFiles.csproj", "{2E03FFE1-9185-4386-8E8D-5E140940F35D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreWriteFiles", "Multithreading\Sync\SemaphoreWriteFiles\SemaphoreWriteFiles.csproj", "{B36F3204-AD59-41F1-BF79-93A6AD138DEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemaphoreWriteFiles", "Multithreading\Sync\SemaphoreWriteFiles\SemaphoreWriteFiles.csproj", "{B36F3204-AD59-41F1-BF79-93A6AD138DEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoResetEventLabs", "Multithreading\Sync\AutoResetEventLabs\AutoResetEventLabs.csproj", "{84C1D29E-742A-4A17-94BD-00F8C2870CB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoResetEventLabs", "Multithreading\Sync\AutoResetEventLabs\AutoResetEventLabs.csproj", "{84C1D29E-742A-4A17-94BD-00F8C2870CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualResetEventLabs", "Multithreading\Sync\ManualResetEventLabs\ManualResetEventLabs.csproj", "{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManualResetEventLabs", "Multithreading\Sync\ManualResetEventLabs\ManualResetEventLabs.csproj", "{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance", "Performance", "{B211AE4D-4A77-47DA-8831-249E3A3F8537}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InitializeObjects", "InitializeObjects", "{3EC1047A-82CB-473D-91F6-8458E358E348}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyInitializationLabs", "Performance\InitializeObjects\LazyInitializationLabs\LazyInitializationLabs.csproj", "{57DC8928-C0D2-43A3-8F22-E89875A3D860}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,6 +157,10 @@ Global
 		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57DC8928-C0D2-43A3-8F22-E89875A3D860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57DC8928-C0D2-43A3-8F22-E89875A3D860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57DC8928-C0D2-43A3-8F22-E89875A3D860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57DC8928-C0D2-43A3-8F22-E89875A3D860}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -187,6 +197,8 @@ Global
 		{B36F3204-AD59-41F1-BF79-93A6AD138DEF} = {ED789995-5890-435E-82AC-E3697345DAF8}
 		{84C1D29E-742A-4A17-94BD-00F8C2870CB9} = {ED789995-5890-435E-82AC-E3697345DAF8}
 		{BF6C2BB9-A1D2-4667-987D-0E7065C0A22E} = {ED789995-5890-435E-82AC-E3697345DAF8}
+		{3EC1047A-82CB-473D-91F6-8458E358E348} = {B211AE4D-4A77-47DA-8831-249E3A3F8537}
+		{57DC8928-C0D2-43A3-8F22-E89875A3D860} = {3EC1047A-82CB-473D-91F6-8458E358E348}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE1C778A-6E00-423E-904A-5B30B82259BC}
