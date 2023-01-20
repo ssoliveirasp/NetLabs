@@ -28,7 +28,7 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
             buffer.Post<MessageQueue>(message);
 
             Console.ResetColor();
-            Console.WriteLine($"Message sent Code: {message.Code.ToString()} TaskId: {Task.CurrentId.ToString()} CurrentTotalMessages: {_blockingMessage.Count.ToString()}");
+            Console.WriteLine($"Message sent Code: {message.Code} TaskId: {Task.CurrentId} CurrentTotalMessages: {_blockingMessage.Count}");
             Thread.Sleep(1000);
 
             return message.Code;

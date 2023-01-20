@@ -8,9 +8,7 @@ namespace ThreadPriorityLabs.ThreadPriorityLabs
     {
         public static void Execute()
         {
-            ThreadWithState t1, t2, t3, t4;
-
-            CreateThreadWithState(out t1, out t2, out t3, out t4);
+            CreateThreadWithState(out ThreadWithState t1, out ThreadWithState t2, out ThreadWithState t3, out ThreadWithState t4);
             CreateThreadScore(t1, t2, t3, t4);
         }
 

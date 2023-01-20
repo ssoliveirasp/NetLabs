@@ -6,7 +6,7 @@ namespace TplPipelineLabs
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
 
             Task<int> t1 = Task.Factory.StartNew(() =>

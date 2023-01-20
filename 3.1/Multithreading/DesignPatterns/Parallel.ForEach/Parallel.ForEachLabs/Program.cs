@@ -4,12 +4,12 @@ namespace ParallelForEachLabs
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             ParallelForEach.For_Threadlocalvariable();
             ParallelForEach.For_ParallelBreak();
 
-            Console.ReadKey();
+            _ = Console.Read();
         }
     }
 }

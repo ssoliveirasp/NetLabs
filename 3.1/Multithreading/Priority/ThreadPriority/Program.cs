@@ -6,13 +6,13 @@ namespace ThreadPriorityLabs
     class Program
     {
        
-        static void Main(string[] args)
+        static void Main()
         {
             bool MainMenuExecuted = false;
 
             while (true)
             {
-                var ret = createUI();
+                var ret = CreateUI();
 
                 switch (ret.KeyChar)
                 {
@@ -31,7 +31,7 @@ namespace ThreadPriorityLabs
            
         }
 
-        static ConsoleKeyInfo createUI()
+        static ConsoleKeyInfo CreateUI()
         {
             Console.Clear();
             Console.WriteLine("Selecione uma das opções:");

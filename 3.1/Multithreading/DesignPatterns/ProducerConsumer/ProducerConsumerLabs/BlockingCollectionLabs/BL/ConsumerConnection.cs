@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
 using PubSubBlockingCollectionLabs.BlockingCollectionLabs.Model;
@@ -24,9 +25,12 @@ namespace PubSubBlockingCollectionLabs.BlockingCollectionLabs.BL
             {
                if (_blockingMessage.Count > 0)
                 {
+      
                     foreach (var item in _blockingMessage)
                     {
                         _blockingMessage.Take();
+
+                         Console.WriteLine($"Name Item: {item.Name}");
                     }
                 }
             }

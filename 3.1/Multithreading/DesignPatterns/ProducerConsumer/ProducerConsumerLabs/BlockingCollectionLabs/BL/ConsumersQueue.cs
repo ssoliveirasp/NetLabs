@@ -15,7 +15,7 @@ namespace PubSubBlockingCollectionLabs.BlockingCollectionLabs.BL
         private readonly int _prefetchCount;
 
         readonly ConcurrentDictionary<int, ConsumerConnection> _ConsumersDictionary;
-        RoundRobinList<int> _roundrobin;
+        readonly RoundRobinList<int> _roundrobin;
 
         public bool CanceledOperation { get; set; } = false;
 
@@ -65,10 +65,10 @@ namespace PubSubBlockingCollectionLabs.BlockingCollectionLabs.BL
             foreach (KeyValuePair<int, ConsumerConnection> item in _ConsumersDictionary)
             {
                 Console.WriteLine($"ConsumerId: {item.Key} Qtde Processadas: {item.Value.MessagesProcessed}");
-                qtdeProcessadas = qtdeProcessadas + item.Value.MessagesProcessed;
+                qtdeProcessadas += item.Value.MessagesProcessed;
             }
 
-            Console.WriteLine($"Qtde Mensagens Processadas: {qtdeProcessadas.ToString()}");
+            Console.WriteLine($"Qtde Mensagens Processadas: {qtdeProcessadas}");
         }
 
         private void SendMessageClient(BlockingCollection<MessageQueue> messages)

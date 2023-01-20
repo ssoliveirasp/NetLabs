@@ -22,7 +22,7 @@ namespace ThreadPriorityLabs.ThreadPriorityLabs.UI
 
                 foreach (ThreadWithState x in ts)
                 {
-                    Console.WriteLine($"{x.Id} | %: {x.Percentage()} | {x.NumberValue.ToString("0000000000000")} | Priority: {x.Priority}");
+                    Console.WriteLine($"{x.Id} | %: {x.Percentage()} | {x.NumberValue:0000000000000} | Priority: {x.Priority}");
                 }
 
                 Thread.Sleep(600);

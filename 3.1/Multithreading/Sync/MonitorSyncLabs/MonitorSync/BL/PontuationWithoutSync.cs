@@ -4,7 +4,7 @@ namespace MultithreadingLabs.Synchronization.MonitorSyncLabs
 {
     public class PontuationWithoutSync
     {
-        private PontuationManager _pontuationManager;
+        private readonly PontuationManager _pontuationManager;
 
         public PontuationWithoutSync(PontuationManager pontuationManager)
         {

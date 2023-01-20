@@ -29,7 +29,9 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
             {
                 if (_bufferMessages.Count > 0)
                 {
-                    _bufferMessages.TryReceiveAll(out var messages);
+                    _ = _bufferMessages.TryReceiveAll(out var messages);
+
+                    Console.WriteLine($"Messages: {messages.Count}");
                 }
 
                 Thread.Sleep(3000);
@@ -37,11 +39,6 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
         }
 
         public void SendMessageClient(IEnumerable<MessageQueue> messages)
-        {
-            SendMessageClient(_bufferMessages, messages);
-        }
-
-        public void SendMessageClient(ITargetBlock<MessageQueue> buffer, IEnumerable<MessageQueue> messages)
         {
             foreach (var item in messages)
             {

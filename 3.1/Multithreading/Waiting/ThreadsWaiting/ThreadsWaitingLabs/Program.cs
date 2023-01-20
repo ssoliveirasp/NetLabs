@@ -6,11 +6,11 @@ namespace ThreadsWaitingLabs
     class Program
     {
        
-        static void Main(string[] args)
+        static void Main()
         {
             while (true)
             {
-                var ret = createUI();
+                var ret = CreateUI();
 
                 switch (ret.KeyChar)
                 {
@@ -21,7 +21,7 @@ namespace ThreadsWaitingLabs
             }
         }
 
-        static ConsoleKeyInfo createUI()
+        static ConsoleKeyInfo CreateUI()
         {
             Console.Clear();
             Console.WriteLine("Selecione uma das opções:");

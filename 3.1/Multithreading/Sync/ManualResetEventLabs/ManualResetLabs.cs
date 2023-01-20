@@ -8,7 +8,7 @@ namespace ManualResetEventLabs
 {
     internal class ManualResetLabs
     {
-        ManualResetEvent manualResetEvent = new ManualResetEvent(false);
+        readonly ManualResetEvent manualResetEvent = new ManualResetEvent(false);
 
         public void Execute() 
         {

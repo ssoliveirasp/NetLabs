@@ -20,7 +20,6 @@ namespace SemaphoreWriteFiles
             ProcessName = processName;
             SemaphoreFile = new Semaphore(initialCount: 1, maximumCount: 5, name: SemaphoreName);
         }
-        private static object Locker { get; } = new object();
 
         public void WriteFile()
         {
@@ -36,7 +35,7 @@ namespace SemaphoreWriteFiles
 
                 try
                 {
-                    File.AppendAllLines("testMutex.txt", new[] { $" {DateTime.Now} Process: {ProcessName} Number: {i.ToString()} TaskId: {Task.CurrentId}" });
+                    File.AppendAllLines("testMutex.txt", new[] { $" {DateTime.Now} Process: {ProcessName} Number: {i} TaskId: {Task.CurrentId}" });
                 }
                 catch (AggregateException ae)
                 {

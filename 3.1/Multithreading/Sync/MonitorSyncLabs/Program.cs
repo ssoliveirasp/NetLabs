@@ -5,11 +5,11 @@ namespace MultithreadingLabs
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             while (true)
             {
-                var ret = createUI();
+                var ret = CreateUI();
 
                 switch (ret.KeyChar)
                 {
@@ -20,7 +20,7 @@ namespace MultithreadingLabs
             }
         }
 
-        static ConsoleKeyInfo createUI()
+        static ConsoleKeyInfo CreateUI()
         {
             Console.Clear();
             Console.WriteLine("1. Execute 'Monitor Synchronization' - Add Number");

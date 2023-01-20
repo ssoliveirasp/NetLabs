@@ -30,7 +30,7 @@ namespace BarrierLabs
 
         private static void MakeTeaSync(bool useBarrier)
         {
-            configureParticipants();
+            ConfigureParticipants();
 
             var water = Task.Factory.StartNew(() => Water(useBarrier));
             var cup = Task.Factory.StartNew(() => Cup(useBarrier));
@@ -43,12 +43,12 @@ namespace BarrierLabs
             tea.Wait();
         }
 
-        private static Barrier barrier = new Barrier(1, b =>
+        private static readonly Barrier barrier = new Barrier(1, b =>
         {
             Console.WriteLine($"Phase {b.CurrentPhaseNumber} is finished");
         });
 
-        static void configureParticipants()
+        static void ConfigureParticipants()
         {
             barrier.RemoveParticipants(1);
             barrier.AddParticipants(2);

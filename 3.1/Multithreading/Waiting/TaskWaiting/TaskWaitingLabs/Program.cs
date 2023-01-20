@@ -5,7 +5,7 @@ namespace TaskWaitingLabs
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("What is the output of 20/2. We will show result in 2 seconds.");
             Task.Delay(2000);

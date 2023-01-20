@@ -4,7 +4,7 @@ namespace MultithreadingLabs.Synchronization.MonitorSyncLabs
 {
     public class PontuationLockSync
     {
-        private PontuationManager _pontuationManager;
+        private readonly PontuationManager _pontuationManager;
         private static readonly object _lock_WithLockSync = new object();
 
         public PontuationLockSync(PontuationManager pontuationManager)

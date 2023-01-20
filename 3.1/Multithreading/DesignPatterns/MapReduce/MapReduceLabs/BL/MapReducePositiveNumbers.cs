@@ -10,19 +10,18 @@ namespace MapReduceLabs.BL
         public static void MapReduceTest()
         {
             //Maps only positive number from list
-            Func<int, IEnumerable<int>> mapPositiveNumbers = number =>
+            static IEnumerable<int> mapPositiveNumbers(int number)
             {
                 IList<int> positiveNumbers = new List<int>();
                 if (number > 0)
                     positiveNumbers.Add(number);
                 return positiveNumbers;
-            };
+            }
 
             // Group results together
-            Func<int, int> groupNumbers = value => value;
+            static int groupNumbers(int value) => value;
             //Reduce function that counts the occurence of each number
-            Func<IGrouping<int, int>, IEnumerable<KeyValuePair<int, int>>> reduceNumbers =
-                grouping => new[] { new KeyValuePair<int, int>(grouping.Key, grouping.Count()) };
+            static IEnumerable<KeyValuePair<int, int>> reduceNumbers(IGrouping<int, int> grouping) => new[] { new KeyValuePair<int, int>(grouping.Key, grouping.Count()) };
 
             // Generate a list of random numbers between -10 and 10
             IList<int> sourceData = new List<int>();
