@@ -8,7 +8,7 @@ namespace ThreadPriorityLabs
        
         static void Main(string[] args)
         {
-            bool MainMenuExecuted;
+            bool MainMenuExecuted = false;
 
             while (true)
             {
@@ -25,7 +25,10 @@ namespace ThreadPriorityLabs
                         MainMenuExecuted = true;
                         break;
                 }
+
+                 Console.WriteLine($"Process executed Success: {MainMenuExecuted}");
             }
+           
         }
 
         static ConsoleKeyInfo createUI()

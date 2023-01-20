@@ -8,9 +8,6 @@ namespace ThreadsWaitingLabs
        
         static void Main(string[] args)
         {
-            bool MainMenuExecuted = false;
-
-
             while (true)
             {
                 var ret = createUI();
@@ -19,7 +16,6 @@ namespace ThreadsWaitingLabs
                 {
                     case '1':
                         ThreadWaiting.Execute();
-                        MainMenuExecuted = true;
                         break;
                 }
             }

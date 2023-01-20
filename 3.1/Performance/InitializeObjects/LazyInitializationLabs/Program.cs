@@ -7,10 +7,7 @@ namespace LazyInitializationLabs
     {
         static void Main(string[] args)
         {
-            //CreateLazySuccessInitialize();
-            //CreateLazyErrorInitialize();
-            //LazyThreadSafe.Execute();
-            LazyInitializerEnsureInitialized.Execute();
+              LazyInitializerEnsureInitialized.Execute();
 
             Console.ReadKey();
         }

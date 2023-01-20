@@ -27,7 +27,7 @@ namespace LazyInitializationLabs.BL
             }
             catch (Exception e)
             {
-                Console.WriteLine($"[{nameof(DataWrapper)}] Object initialized Error");
+                Console.WriteLine($"[{nameof(DataWrapper)}] Object initialized Error Error: {e.Message}");
             }
         }
         public Data CachedData { get; set; }
@@ -43,7 +43,7 @@ namespace LazyInitializationLabs.BL
             //Dummy Delay
             Thread.Sleep(5000);
             throw new Exception("Error");
-            return new Data();
+         //   return new Data();
         }
     }
 }

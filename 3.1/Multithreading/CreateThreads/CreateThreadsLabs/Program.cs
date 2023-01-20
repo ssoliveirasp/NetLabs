@@ -1,8 +1,6 @@
 ﻿using CreateThreadsLabs.BL;
-using CreateThreadsLabs.UI;
 using System;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace CreateThreadsLabs
 {
@@ -39,7 +37,7 @@ namespace CreateThreadsLabs
                 .CreateStart_NewTask_UsingDelegate();
 
             Console.WriteLine($"Pressione uma tecla. Para finalizar.");
-            Console.ReadKey();
+            Console.Read();
             Console.WriteLine($"finalizando processo.");
         }
 
