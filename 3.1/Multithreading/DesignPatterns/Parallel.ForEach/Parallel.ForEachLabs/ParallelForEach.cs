@@ -13,11 +13,11 @@ namespace ParallelForEachLabs
             var numbers = Enumerable.Range(1, 60);
             long sumOfNumbers = 0;
 
-            Action<long> taskFinishedMethod = (taskResult) =>
+            void taskFinishedMethod(long taskResult)
             {
-                Console.WriteLine($"Sum at the end of all task iterations for task { Task.CurrentId} is { taskResult }");
+                Console.WriteLine($"Sum at the end of all task iterations for task {Task.CurrentId} is {taskResult}");
                 Interlocked.Add(ref sumOfNumbers, taskResult);
-            };
+            }
 
             Parallel.For(1, numbers.Count(),
                 () => 0,
@@ -26,7 +26,7 @@ namespace ParallelForEachLabs
                     subtotal += i;
                     return subtotal;
                 },
-                taskFinishedMethod
+(Action<long>)taskFinishedMethod
             );
             Console.WriteLine($"The total of 60 numbers is {sumOfNumbers}");
         }

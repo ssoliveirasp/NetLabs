@@ -8,14 +8,14 @@ namespace MultithreadingLabs.Threading
     public class MonitorWaitingUI
     {
 
-        public static void StartMonitorWaiting(WaitingScoreModel x, double SegundosPausa)
+        public static void StartMonitorWaiting(double SegundosPausa)
         {
-            Console.WriteLine($"Execução: {DateTime.Now.ToString("HH:mm:ss")}  Pausa (s): {SegundosPausa.ToString("00000")}");
+            Console.WriteLine($"Execução: {DateTime.Now:HH:mm:ss}  Pausa (s): {SegundosPausa:00000}");
         }
 
         public static void PrintValues(WaitingScoreModel x)
         {
-            Console.WriteLine($"%: {x.Percentage} | Valor: {x.Value.ToString("0000000000000")} ");
+            Console.WriteLine($"%: {x.Percentage} | Valor: {x.Value:0000000000000} ");
         }
     }
 }

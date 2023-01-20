@@ -8,7 +8,7 @@ namespace AutoResetEventLabs
 {
     internal class AutoResetEventLab
     {
-        AutoResetEvent autoResetEvent = new AutoResetEvent(false);
+        readonly AutoResetEvent autoResetEvent = new AutoResetEvent(false);
 
         public void Execute()
         {

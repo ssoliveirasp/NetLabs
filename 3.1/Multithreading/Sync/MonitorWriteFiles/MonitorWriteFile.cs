@@ -30,7 +30,7 @@ namespace MonitorRWFiles
                 Monitor.Enter(Locker);
                 try
                 {
-                    File.AppendAllLines($"test.txt", new[] { $" {DateTime.Now} Process: {ProcessName} Number: {i.ToString()} TaskId: {Task.CurrentId}" });
+                    File.AppendAllLines($"test.txt", new[] { $" {DateTime.Now} Process: {ProcessName} Number: {i} TaskId: {Task.CurrentId}" });
                     
                 }
                 catch (AggregateException ex)

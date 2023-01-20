@@ -6,7 +6,7 @@ namespace MutexWriteFiles
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Task[] tasksProcess = new Task[100000];
 

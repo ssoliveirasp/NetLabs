@@ -58,7 +58,7 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
             }
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Finalized TaskId: {Task.CurrentId.ToString()} TotalMessages: {messagesCountProducer}");
+            Console.WriteLine($"Finalized TaskId: {Task.CurrentId} TotalMessages: {messagesCountProducer}");
             Console.ForegroundColor = ConsoleColor.White;
         }
 
@@ -74,13 +74,13 @@ namespace BufferBlockLabs.BufferBlockLabs.BL
         public ProducerQueue ShowSummaryProperties(bool showEndProcessInfo = false)
         {
             Console.ResetColor();
-            Console.WriteLine($"Producers              - Count: {_maxProducers.ToString()}");
-            Console.WriteLine($"Max Messages Producers - Count: {_maxMessagesPerProducer.ToString()}");
+            Console.WriteLine($"Producers              - Count: {_maxProducers}");
+            Console.WriteLine($"Max Messages Producers - Count: {_maxMessagesPerProducer}");
 
             if (showEndProcessInfo)
             {
-                Console.WriteLine($"Limit Messages         - Count: {LimitMessages.ToString()}");
-                Console.WriteLine($"Messages Created       - Count: {_messagesCount.ToString()}");
+                Console.WriteLine($"Limit Messages         - Count: {LimitMessages}");
+                Console.WriteLine($"Messages Created       - Count: {_messagesCount}");
             }
             return this;
         }

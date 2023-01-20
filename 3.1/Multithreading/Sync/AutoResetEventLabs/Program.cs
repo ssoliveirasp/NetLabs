@@ -6,7 +6,7 @@ namespace AutoResetEventLabs
     internal class Program
     {
 
-        static void Main(string[] args)
+        static void Main()
         {
             var autoResetLab = new AutoResetEventLab();
             

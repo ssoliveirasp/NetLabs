@@ -28,7 +28,7 @@ namespace loadbalancingPartitioner
             sw.Stop();
 
             Console.WriteLine(
-                $"[{nameof(ExecuteParallelFor_WithouPartitioner)}] Tempo execução (ms): {sw.ElapsedMilliseconds.ToString()} items: {NumInteractions}");
+                $"[{nameof(ExecuteParallelFor_WithouPartitioner)}] Tempo execução (ms): {sw.ElapsedMilliseconds} items: {NumInteractions}");
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace loadbalancingPartitioner
             var elapsedMilliseconds = SimulateProcessParallel(source);
 
             Console.WriteLine(
-                $"[{nameof(ExecuteParallelForEach_WithPartitioner_RangePartition)}] Tempo execução (ms): {elapsedMilliseconds.ToString()} Items: {NumInteractions}");
+                $"[{nameof(ExecuteParallelForEach_WithPartitioner_RangePartition)}] Tempo execução (ms): {elapsedMilliseconds} Items: {NumInteractions}");
         }
 
         /// <summary>
@@ -87,12 +87,12 @@ namespace loadbalancingPartitioner
                 source.AddRange(Enumerable.Range(source.Count + 1, NumInteractions));
             }
 
-            void ProcessChunk(List<int> chunckItems, int numCycle)
+            static void ProcessChunk(List<int> chunckItems, int numCycle)
             {
                 var elapsedMilliseconds = SimulateProcessParallel(chunckItems);
 
                 Console.WriteLine(
-                    $"[{nameof(ExecuteParallelForEach_WithPartitioner_ChunkPartitioning)}] Tempo execução (ms): {elapsedMilliseconds.ToString()} - Cycle: {numCycle} Items: {chunckItems.Count}");
+                    $"[{nameof(ExecuteParallelForEach_WithPartitioner_ChunkPartitioning)}] Tempo execução (ms): {elapsedMilliseconds} - Cycle: {numCycle} Items: {chunckItems.Count}");
             }
         }
 

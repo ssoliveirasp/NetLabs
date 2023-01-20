@@ -13,7 +13,6 @@ namespace MultithreadingLabs.Waiting
     {
         static readonly WaitingScoreModel model = new WaitingScoreModel();
         private static readonly object _lock_WithMonitorSync = new object();
-        private static object _lock_MonitorWaiting = new object();
         public bool EmPausa { get; set; }
 
         public void ExecutePontuation()
@@ -24,7 +23,7 @@ namespace MultithreadingLabs.Waiting
 
                 Stopwatch sw = MonitorSyncWaiting();
 
-                MonitorWaitingUI.StartMonitorWaiting(model, sw.Elapsed.TotalSeconds);
+                MonitorWaitingUI.StartMonitorWaiting(sw.Elapsed.TotalSeconds);
 
                 model.MsLastExecution = model.IncrementOne();
 

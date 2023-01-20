@@ -6,7 +6,7 @@ namespace TplDataFlowLabs
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //Creating two tasks t1 and t2 and starting them at the same //time
             Task<int> t1 = Task.Factory.StartNew(() => { return Task1(); });

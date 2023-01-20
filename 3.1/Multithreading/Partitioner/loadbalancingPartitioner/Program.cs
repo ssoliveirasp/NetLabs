@@ -4,7 +4,7 @@ namespace loadbalancingPartitioner
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             PartitionerLabs.ExecuteParallelFor_WithouPartitioner();
             PartitionerLabs.ExecuteParallelForEach_WithPartitioner_RangePartition();
