@@ -11,7 +11,7 @@ namespace loadbalancingPartitioner
     /// <summary>
     /// https://docs.microsoft.com/pt-br/dotnet/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl
     /// </summary>
-    internal class PartitionerLabs
+    internal static class PartitionerLabs
     {
         private const int NumInteractions = 100000;
 
@@ -23,7 +23,7 @@ namespace loadbalancingPartitioner
 
             sw.Start();
 
-            Parallel.For(1, NumInteractions, index => { SimulateProcess(); });
+            Parallel.For(1, NumInteractions, _ => SimulateProcess());
 
             sw.Stop();
 

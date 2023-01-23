@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MapReduceLabs.BL
 {
-    internal class MapReducePositiveNumbers
+    internal static class MapReducePositiveNumbers
     {
         public static void MapReduceTest()
         {
@@ -41,7 +41,6 @@ namespace MapReduceLabs.BL
             {
                 Console.WriteLine($"{item.Key} found {item.Value} times");
             }
-
         }
     }
 }
