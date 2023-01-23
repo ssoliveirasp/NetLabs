@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace CreateThreadsLabs
 {
-    public class Program
+    public static class Program
     {
         static void Main()
         {
@@ -36,17 +36,9 @@ namespace CreateThreadsLabs
                 .CreateStart_NewTask_ActionDelegate()
                 .CreateStart_NewTask_UsingDelegate();
 
-            Console.WriteLine($"Pressione uma tecla. Para finalizar.");
+            Console.WriteLine("Pressione uma tecla. Para finalizar.");
             Console.Read();
-            Console.WriteLine($"finalizando processo.");
+            Console.WriteLine("finalizando processo.");
         }
-
-        private static void ExecuteWithoutParamStatic()
-        {
-            Thread.Sleep(1000);
-            Console.WriteLine($"{nameof(ExecuteWithoutParamStatic)} Id: {Thread.CurrentThread.ManagedThreadId} IsBackground: {Thread.CurrentThread.IsBackground}");
-        }
-
-       
     }
 }
