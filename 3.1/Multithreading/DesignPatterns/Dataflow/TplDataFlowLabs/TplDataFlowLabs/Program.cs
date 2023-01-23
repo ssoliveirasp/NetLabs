@@ -4,25 +4,24 @@ using System.Threading.Tasks;
 
 namespace TplDataFlowLabs
 {
-    class Program
+    static class Program
     {
         static void Main()
         {
             //Creating two tasks t1 and t2 and starting them at the same //time
-            Task<int> t1 = Task.Factory.StartNew(() => { return Task1(); });
-            Task<int> t2 = Task.Factory.StartNew(() => { return Task2(); });
-
+            Task<int> t1 = Task.Factory.StartNew(() => Task1());
+            Task<int> t2 = Task.Factory.StartNew(() => Task2());
 
             //Creating task 3 and used ContinueWhenAll that runs when both the 
             //tasks T1 and T2 will be completed
             Task<int> t3 = Task.Factory.ContinueWhenAll(
-            new[] { t1, t2 }, (tasks) => { return Task3(); });
+            new[] { t1, t2 }, (_) => Task3());
 
             //Task 4 and Task 5 will be started when Task 3 will be completed. 
             //ContinueWith actually creates a continuation of executing tasks 
             //T4 and T5 asynchronously when the task T3 is completed
-            Task<int> t4 = t3.ContinueWith((antecendent) => { return Task4(); });
-            Task<int> t5 = t3.ContinueWith((antecendent) => { return Task5(); });
+            Task<int> t4 = t3.ContinueWith((_) => Task4());
+            Task<int> t5 = t3.ContinueWith((_) => Task5());
             Console.Read();
         }
         //Implementation of Task1

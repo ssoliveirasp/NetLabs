@@ -4,19 +4,15 @@ using System.Threading.Tasks;
 
 namespace TplPipelineLabs
 {
-    class Program
+    static class Program
     {
         static void Main()
         {
+            Task<int> t1 = Task.Factory.StartNew(() => CreateUser());
 
-            Task<int> t1 = Task.Factory.StartNew(() =>
-            { return CreateUser(); });
+            var t2 = t1.ContinueWith((antecedent) => InitiateWorkflow(antecedent.Result));
 
-            var t2 = t1.ContinueWith((antecedent) =>
-            { return InitiateWorkflow(antecedent.Result); });
-            
-            var t3 = t2.ContinueWith((antecedant) =>
-            { return SendEmail(antecedant.Result); });
+            var t3 = t2.ContinueWith((antecedant) => SendEmail(antecedant.Result));
 
             Console.Read();
         }

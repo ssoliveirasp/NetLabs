@@ -6,14 +6,11 @@ using Bogus;
 
 namespace MapReduceLabs.Model
 {
- 
-
     internal class Books
     {
         public long Id { get; set; }
         public String Name { get; set; }
         public BooksEnum.CategoryEnum Category { get; set; }
-
 
         public static IEnumerable<Books> CreateListFake()
         {
@@ -25,7 +22,7 @@ namespace MapReduceLabs.Model
                 //Set a global policy by using Faker.DefaultStrictMode
                 .StrictMode(true)
                 //OrderId is deterministic
-                .RuleFor(o => o.Id, f => orderIds++)
+                .RuleFor(o => o.Id, _ => orderIds++)
                 //Pick some fruit from a basket
                 .RuleFor(o => o.Category, f => f.PickRandom(category))
                 //A random quantity from 1 to 10
@@ -34,7 +31,7 @@ namespace MapReduceLabs.Model
             return testOrders.Generate(1000).ToList<Books>();
         }
     }
-    public class BooksEnum
+    public static class BooksEnum
     {
         public enum CategoryEnum
         {

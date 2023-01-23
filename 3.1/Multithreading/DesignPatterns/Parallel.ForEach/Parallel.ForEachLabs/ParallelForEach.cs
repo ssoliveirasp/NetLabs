@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace ParallelForEachLabs
 {
-    public class ParallelForEach
+    public static class ParallelForEach
     {
-        
         public static void For_Threadlocalvariable()
         {
             var numbers = Enumerable.Range(1, 60);
@@ -21,7 +20,7 @@ namespace ParallelForEachLabs
 
             Parallel.For(1, numbers.Count(),
                 () => 0,
-                (i, state, subtotal) =>
+                (i, _, subtotal) =>
                 {
                     subtotal += i;
                     return subtotal;
@@ -72,7 +71,7 @@ namespace ParallelForEachLabs
             if (result.LowestBreakIteration.HasValue)
                 Console.WriteLine($"\nLowest Break Iteration: {result.LowestBreakIteration}");
             else
-                Console.WriteLine($"\nNo lowest break iteration.");
+                Console.WriteLine("\nNo lowest break iteration.");
         }
     }
 }
