@@ -1,0 +1,7 @@
+ "Kestrel": {
+    "EndPoints": {
+      "Http": {
+        "Url": "http://localhost:4300"
+      }
+    }
+  },
